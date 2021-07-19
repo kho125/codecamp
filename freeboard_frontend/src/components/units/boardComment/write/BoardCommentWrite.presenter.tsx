@@ -45,6 +45,7 @@ export default function BoardCommentWriteUI(props) {
             등록하기
           </Enrollment__Button>
         </Comment__bottom>
+
       </Wrapper>
     </>
   );
