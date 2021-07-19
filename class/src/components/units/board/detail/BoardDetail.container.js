@@ -18,5 +18,3 @@ export default function BoardDetail() {
         <BoardDetailUI qqq={data} onClickEdit={onClickEdit} />
     )
 }
-
-
