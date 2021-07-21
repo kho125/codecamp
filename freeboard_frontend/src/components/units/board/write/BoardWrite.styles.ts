@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   border: none;
-  box-shadow: 0px 0px 10px gray;
+  box-shadow: 0 0 10px gray;
 `;
 
 export const Title = styled.div`
@@ -72,7 +72,6 @@ export const Contents = styled.textarea`
 
 export const ZipcodeWrapper = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 
 export const Zipcode = styled.input`
@@ -139,7 +138,6 @@ export const RadioLabel = styled.label`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: center;
   padding-top: 80px;
 `;
