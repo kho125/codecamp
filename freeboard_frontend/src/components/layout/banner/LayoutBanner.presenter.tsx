@@ -5,7 +5,7 @@ import { Banner, AAA, BBB, CCC } from "./LayoutBanner.styles";
 
 export default function LayoutBannerUI() {
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
