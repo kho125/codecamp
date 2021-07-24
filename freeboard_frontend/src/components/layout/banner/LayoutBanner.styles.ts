@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 
 export const Banner = styled.div`
   height: 400px;
-  background-color: #999;
 `;
+
+export const Slider = styled.div``;
 
 export const AAA = styled.div`
   background-image: url("/aaa/img-01.png");

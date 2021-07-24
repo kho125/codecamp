@@ -2385,6 +2385,13 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
   integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
 
+custom-types@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/custom-types/-/custom-types-0.0.6.tgz#b51518bed6be397434faf5f6207ea564a56be22e"
+  integrity sha1-tRUYvta+OXQ0+vX2IH6lZKVr4i4=
+  dependencies:
+    types.js latest
+
 damerau-levenshtein@^1.0.6:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.7.tgz#64368003512a1a6992593741a09a9d31a836f55d"
@@ -6464,6 +6471,11 @@ type-fest@^0.7.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.7.1.tgz#8dda65feaf03ed78f0a3f9678f1869147f7c5c48"
   integrity sha512-Ne2YiiGN8bmrmJJEuTWTLJR32nh/JdL1+PSicowtNb0WFpn59GK8/lfD61bVtzguz7b3PBt74nxpv/Pw5po5Rg==
 
+types.js@^1.9.3, types.js@latest:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/types.js/-/types.js-1.9.3.tgz#41d3c6dfbb504934da536a63658d2ef7165c0c56"
+  integrity sha512-tzuUom3YMvKPf3Ac/dd7Ye9P/tqXp3cUkNE5xgFZPCQOQubOcZAitKOUIF9HV+o1/0RwScckL2Xxf8f5jXACUw==
+
 typescript@^4.3.5:
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
@@ -6609,6 +6621,11 @@ value-or-promise@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/value-or-promise/-/value-or-promise-1.0.6.tgz#218aa4794aa2ee24dcf48a29aba4413ed584747f"
   integrity sha512-9r0wQsWD8z/BxPOvnwbPf05ZvFngXyouE9EKB+5GbYix+BYnAwrIChCUyFIinfbf2FL/U71z+CPpbnmTdxrwBg==
+
+version-js@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/version-js/-/version-js-1.0.3.tgz#a3a61f8d0bb7f5215de80a82f35813b8fe8bc0b7"
+  integrity sha512-OeanD9gDdTiNYQPpdj9A1X51Qg+uD731WYQwbaq9D6d+bLn/ySr+K9PXm6N6jRAtsNj5Ysl4zso0ZSbEUXaYUQ==
 
 vm-browserify@1.1.2, vm-browserify@^1.0.1:
   version "1.1.2"

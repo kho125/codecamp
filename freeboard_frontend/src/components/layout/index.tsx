@@ -19,10 +19,10 @@ export default function Layout(props: any) {
       <LayoutBanner />
       <LayoutNavigation />
       <Wrapper>
-        <div style={{ backgroundColor: "skyblue" }}>사이드메뉴 컴포넌트</div>
+        {/* <div style={{ backgroundColor: "skyblue" }}>사이드메뉴 컴포넌트</div> */}
         <Body>{props.children}</Body>
       </Wrapper>
-      <LayoutFooter />
+      {/* <LayoutFooter /> */}
     </>
   );
 }

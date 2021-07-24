@@ -12,6 +12,7 @@ export const Logo = styled.div`
   margin: 58px 0 58px 360px;
   width: 270px;
   height: 50px;
+  cursor: pointer;
 `;
 
 export const Member = styled.div`
@@ -19,7 +20,6 @@ export const Member = styled.div`
   margin: 54px 360px 54px 0;
   font-weight: 700;
   font-size: 16px;
-  /* text-align: center; */
 `;
 
 export const Login = styled.button`
