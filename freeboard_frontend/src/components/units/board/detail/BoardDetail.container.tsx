@@ -40,27 +40,29 @@ export default function BoardDetail() {
   else if (data.fetchBoard.youtubeUrl == null) video = "";
   else video = data.fetchBoard.youtubeUrl; // 가져온 data에서 fetchBoard의 youtubeUrl을 가져오는 것
 
-  // function onClickLike() {
-  //   likeBoard({
-  //     variables: { boardId: router.query.boardId },
-  //     refetchQueries: [
-  //       { query: FETCH_BOARD, variables: { boardId: router.query.boardId } },
-  //     ],
-  //   });
-  // }
+  function onClickLike() {
+    likeBoard({
+      variables: { boardId: router.query.boardId },
+      refetchQueries: [
+        { query: FETCH_BOARD, variables: { boardId: router.query.boardId } },
+      ],
+    });
+  }
 
-  // function onClickDislike() {
-  //   dislikeBoard({
-  //     variables: { boardId: router.query.boardId },
-  //     refetchQueries: [
-  //       { query: FETCH_BOARD, variables: { boardId: router.query.boardId } },
-  //     ],
-  //   });
-  // }
+  function onClickDislike() {
+    dislikeBoard({
+      variables: { boardId: router.query.boardId },
+      refetchQueries: [
+        { query: FETCH_BOARD, variables: { boardId: router.query.boardId } },
+      ],
+    });
+  }
 
   return (
     <BoardDetailUI
       data={data}
+      onClickLike={onClickLike}
+      onClickDislike={onClickDislike}
       onClickMoveToList={onClickMoveToList}
       onClickMoveToEdit={onClickMoveToEdit}
       onClickDelete={onClickDelete}

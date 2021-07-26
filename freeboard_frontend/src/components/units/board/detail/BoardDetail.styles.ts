@@ -45,6 +45,11 @@ export const Info = styled.div`
   justify-content: center;
 `;
 
+// export const Img = styled.img`
+//   width: 200px;
+//   height: 220px;
+// `;
+
 export const Writer = styled.div``;
 
 export const CreatedAt = styled.div``;
