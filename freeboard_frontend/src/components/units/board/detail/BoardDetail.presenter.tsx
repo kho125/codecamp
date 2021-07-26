@@ -10,6 +10,7 @@ import {
   Header,
   IconWrapper,
   Info,
+  // Img,
   LinkIcon,
   LocationIcon,
   Title,
@@ -49,6 +50,7 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
         <Body>
           <Title>{props.data?.fetchBoard.title}</Title>
           <Contents>{props.data?.fetchBoard.contents}</Contents>
+          {/* <Img src={props.imgUrl}></Img> */}
           <Youtube url={[props.video]} />
           <LikeWrapper>
             <IconWrapper>

@@ -79,7 +79,7 @@ export const Page = styled.span`
 
   :hover {
     color: #06f;
-    font-size: 30px;
+    font-size: 60px;
     transition: 0.3s;
   }
 `;
