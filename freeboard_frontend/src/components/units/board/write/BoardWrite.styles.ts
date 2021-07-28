@@ -87,7 +87,8 @@ export const SearchButton = styled.button`
   margin-left: 16px;
   background-color: black;
   cursor: pointer;
-  color: white;
+  color: #fff;
+  border: none;
 `;
 
 export const Address = styled.input`
@@ -118,6 +119,11 @@ export const UploadButton = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
+  transition: 0.5s;
+  :hover {
+    transition: 0.5s;
+    background-color: #777;
+  }
 `;
 
 export const OptionWrapper = styled.div`
