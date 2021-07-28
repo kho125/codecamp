@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, LegacyRef, MouseEventHandler } from "react";
 import {
   Error,
   Address,
@@ -29,6 +29,12 @@ import Modal from "antd/lib/modal/Modal";
 import DaumPostcode from "react-daum-postcode";
 
 interface IBoardWriteUIProps {
+  fileRef: LegacyRef<HTMLInputElement> | undefined;
+  openFile: MouseEventHandler<HTMLButtonElement> | undefined;
+  fileRef2: LegacyRef<HTMLInputElement> | undefined;
+  openFile2: MouseEventHandler<HTMLButtonElement> | undefined;
+  fileRef3: LegacyRef<HTMLInputElement> | undefined;
+  openFile3: MouseEventHandler<HTMLButtonElement> | undefined;
   isEdit?: boolean;
   active: boolean;
   zipcode: string;
@@ -107,7 +113,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
               우편번호 검색
             </SearchButton>
           </ZipcodeWrapper>
-          <Address value={props.address} readOnly />
+          <Address readOnly />
           <Address onChange={props.onChangeAddressDetail} />
         </InputWrapper>
         <InputWrapper>
@@ -120,20 +126,30 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
         </InputWrapper>
         <ImageWrapper>
           <Label>사진첨부</Label>
-          <UploadButton>
-            {/* <input
-                    type="file"
-                    style={{ display: "none" }}
-                    ref={fileRef}
-                /> */}
+          <UploadButton onClick={props.openFile}>
+            <input
+              type="file"
+              style={{ display: "none" }}
+              ref={props.fileRef}
+            />
             <div>+</div>
             <div>Upload</div>
           </UploadButton>
-          <UploadButton>
+          <UploadButton onClick={props.openFile2}>
+            <input
+              type="file"
+              style={{ display: "none" }}
+              ref={props.fileRef2}
+            />
             <div>+</div>
             <div>Upload</div>
           </UploadButton>
-          <UploadButton>
+          <UploadButton onClick={props.openFile3}>
+            <input
+              type="file"
+              style={{ display: "none" }}
+              ref={props.fileRef3}
+            />
             <div>+</div>
             <div>Upload</div>
           </UploadButton>

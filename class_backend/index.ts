@@ -1,7 +1,6 @@
 import { createConnection } from "typeorm";
 import { ApolloServer, gql } from "apollo-server";
 import Board from "./Board.postgres";
-import { argsToArgsConfig } from "graphql/type/definition";
 
 const typeDefs = gql`
   input UpdateBoardInput {

@@ -12,13 +12,6 @@ export const Menu = styled.div`
   padding: 18px 0;
 `;
 
-export const Dog = styled.a`
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 27px;
-  color: #514400;
-`;
-
 export const FreeBoard = styled.a`
   font-weight: 700;
   font-size: 18px;

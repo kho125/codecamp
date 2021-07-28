@@ -7,10 +7,6 @@ export default function LayoutNavigation() {
   const router = useRouter();
   // const [imgUrl, setImgUrl] = useState("");
 
-  function goDog() {
-    router.push(`/dog`);
-  }
-
   function goBoard() {
     router.push(`/boards`);
   }
@@ -34,7 +30,6 @@ export default function LayoutNavigation() {
   return (
     <LayoutNavigationUI
       // imgUrl={imgUrl}
-      goDog={goDog}
       goBoard={goBoard}
       goMarket={goMarket}
       goMypag={goMypage}
