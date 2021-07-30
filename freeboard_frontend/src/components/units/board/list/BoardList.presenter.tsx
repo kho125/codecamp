@@ -1,10 +1,14 @@
 import { getDate } from "../../../../commons/libraries/utils";
 import {
-  Button,
+  Searchs,
+  Search,
+  Date,
+  SearchButton,
   ColumnBasic,
   ColumnHeaderBasic,
   ColumnHeaderTitle,
   ColumnTitle,
+  Enrollment,
   Footer,
   Row,
   TableBottom,
@@ -19,6 +23,11 @@ export default function BoardListUI(props: IBoardListUIProps) {
   return (
     <>
       <Wrapper>
+        <Searchs>
+          <Search placeholder="제목을 검색해주세요" />
+          <Date placeholder="YYYY.MM.DD ~ YYYY.MM.DD" />
+          <SearchButton>검색하기</SearchButton>
+        </Searchs>
         <TableTop />
         <Row>
           <ColumnHeaderBasic>번호</ColumnHeaderBasic>
@@ -38,10 +47,10 @@ export default function BoardListUI(props: IBoardListUIProps) {
         ))}
         <TableBottom />
         <Footer>
-          <Button onClick={props.onClickMoveToBoardNew}>
+          <Enrollment onClick={props.onClickMoveToBoardNew}>
             <img src="/images/boards/list/write.png" />
             게시물 등록하기
-          </Button>
+          </Enrollment>
         </Footer>
       </Wrapper>
 
