@@ -1,4 +1,4 @@
-import BoardCommentListUIItem from "./BoardCommendList.presenterItem";
+import BoardCommentListUIItem from "./BoardCommentList.presenterItem";
 import { IBoardCommentListUIProps } from "./BoardCommentList.types";
 
 export default function BoardCommentListUI(props: IBoardCommentListUIProps) {

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const ItemWrapper = styled.div`
   width: 1200px;
-  margin: 0px 100px;
+  margin: 0 100px;
   padding-top: 20px;
   height: 128px;
   border-bottom: 1px solid lightgray;
@@ -10,7 +10,6 @@ export const ItemWrapper = styled.div`
 
 export const FlexWrapper = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 
 export const Avatar = styled.img`
@@ -27,7 +26,6 @@ export const Contents = styled.div``;
 
 export const OptionWrapper = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 export const UpdateIcon = styled.img`
   width: 24px;
