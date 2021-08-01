@@ -38,7 +38,6 @@ export const Name = styled.input`
   padding-left: 20px;
   font-weight: 500;
   font-size: 16px;
-  /* color: #828282; */
   border: 1px solid #bdbdbd;
 `;
 
@@ -75,7 +74,7 @@ export const Letter = styled.div`
 
 export const Enrollment__Button = styled.button`
   width: 91px;
-  height: 49px;
+  height: 50px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
