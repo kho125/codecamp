@@ -1,45 +1,9 @@
 import styled from "@emotion/styled";
+import { ITextTokenProps } from "./BoardList.types";
 
 export const Wrapper = styled.div`
   width: 1200px;
   margin: 100px 100px 10px;
-`;
-
-export const Searchs = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 27px;
-`;
-
-export const Search = styled.input`
-  width: 776px;
-  height: 52px;
-  padding-left: 31.51px;
-  background-color: #f2f2f2;
-  border: none;
-  border-radius: 10px;
-`;
-
-export const Date = styled.input`
-  width: 244px;
-  height: 52px;
-  padding-left: 16px;
-  border: 1px solid #bdbdbd;
-`;
-
-export const SearchButton = styled.button`
-  width: 94px;
-  height: 52px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  :hover {
-    background-color: rgb(103, 103, 103);
-    transition: 0.3s;
-  }
 `;
 
 export const TableTop = styled.div`
@@ -82,11 +46,17 @@ export const ColumnTitle = styled.div`
   }
 `;
 
+export const TextToken = styled.span`
+  color: ${(props: ITextTokenProps) => (props.isMatched ? "red" : "black")};
+`;
+
 export const Footer = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 50px;
 `;
+
+export const PencilIcon = styled.img``;
 
 export const Enrollment = styled.button`
   width: 171px;
