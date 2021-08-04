@@ -1,16 +1,33 @@
 import styled from "@emotion/styled";
+import { ISubmitButtonProps } from "./Signup.types";
 
 export const Wrapper = styled.div`
   width: 1920px;
-  height: 1000px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* opacity: 0.8; */
-  background: #000 url("/images/boards/login/background.png");
 `;
 
-export const Background = styled.div``;
+export const Background = styled.div`
+  background-color: #000;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+`;
+
+export const Test = styled.div`
+  width: 1920px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/boards/login/background.png");
+  position: absolute;
+  z-index: -2;
+`;
 
 export const Signup = styled.div`
   width: 384px;
@@ -112,15 +129,19 @@ export const Signup__Button = styled.button`
   background-color: #4f4f4f;
   border-radius: 16px;
   border: none;
-  color: #bdbdbd;
+  color: #111;
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 40px;
   cursor: pointer;
-  transition: 0.3s;
-  :hover {
-    transition: 0.3s;
-    background-color: #ffd600;
-    color: #000;
-  }
+  transition: 0.5s;
+  background-color: ${(props: ISubmitButtonProps) =>
+    props.active ? "#ffd600" : ""};
+`;
+
+export const Error = styled.div`
+  /* margin-top: -30px; */
+  font-size: 14px;
+  line-height: 20px;
+  color: #ff0000;
 `;

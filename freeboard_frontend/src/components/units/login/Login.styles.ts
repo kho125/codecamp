@@ -3,14 +3,31 @@ import { ISubmitButtonProps } from "./Login.types";
 
 export const Wrapper = styled.div`
   width: 1920px;
-  height: 1000px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000 url("/images/boards/login/background.png");
 `;
 
-export const Background = styled.div``;
+export const Background = styled.div`
+  background-color: #000;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+`;
+
+export const Test = styled.div`
+  width: 1920px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/boards/login/background.png");
+  position: absolute;
+  z-index: -2;
+`;
 
 export const Login = styled.div`
   width: 384px;
@@ -24,7 +41,7 @@ export const Logo = styled.div`
   justify-content: center;
 `;
 
-export const Writer = styled.input`
+export const Email__Input = styled.input`
   margin-bottom: 20px;
   width: 384px;
   height: 64px;
@@ -39,11 +56,11 @@ export const Writer = styled.input`
   /* opacity: 0.6; */
   :focus {
     outline: none;
-    box-shadow: 1px 1px 8px;
+    box-shadow: 1px 1px 10px;
   }
 `;
 
-export const Password = styled.input`
+export const Password__Input = styled.input`
   width: 384px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
@@ -57,9 +74,11 @@ export const Password = styled.input`
   /* opacity: 0.6; */
   :focus {
     outline: none;
-    box-shadow: 1px 1px 8px;
+    box-shadow: 1px 1px 10px;
   }
 `;
+
+export const Checkbox = styled.button``;
 
 export const LoginKeep = styled.div`
   margin: 20px 0 40px 12px;
@@ -121,7 +140,7 @@ export const Signup = styled.div`
 `;
 
 export const Error = styled.div`
-  padding-top: 4px;
+  /* padding-top: -20px; */
   font-size: 14px;
   line-height: 20px;
   color: #ff0000;

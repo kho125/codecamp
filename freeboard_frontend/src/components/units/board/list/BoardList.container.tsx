@@ -38,6 +38,7 @@ export default function BoardList() {
   }
 
   function onClickMoveToBoardDetail(event: MouseEvent<HTMLDivElement>) {
+    // 무슨뜻?
     router.push(`/boards/${(event.target as Element).id}`);
   }
 
