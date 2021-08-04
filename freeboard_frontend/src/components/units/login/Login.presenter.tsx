@@ -1,9 +1,10 @@
 import {
   Wrapper,
+  Background,
   Login,
   Logo,
-  Writer,
-  Password,
+  Email__Input,
+  Password__Input,
   Error,
   LoginKeep,
   SigninButton,
@@ -12,18 +13,15 @@ import {
   EmailFind,
   PasswordFind,
   Signup,
+  Test,
 } from "./Login.styles";
 import { INPUTS_INIT } from "./Login.container";
-import { useState } from "react";
 
-// import Modal from "antd/lib/modal/Modal";
-// import DaumPostcode from "react-daum-postcode";
-// import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
-// import { IBoardWriteUIProps } from "./BoardWrite.types";
-// import { useContext } from "react";
-// import { BoardsEditPageContext } from "../../../../../pages/boards/[boardId]/edit";
+import { useState } from "react";
+// import { BoardsEditPageContext } from "../../../../pages/boards/[boardId]/edit";
 
 interface ILoginUIProps {
+  onClickUpdate: MouseEventHandler<HTMLButtonElement> | undefined;
   active: boolean;
   inputsErrors: typeof INPUTS_INIT;
   onChangeInputs: (
@@ -34,24 +32,24 @@ interface ILoginUIProps {
 }
 
 export default function LoginUI(props: ILoginUIProps) {
-  const { isEdit, setIsEdit } = useState(false);
+  const { isEdit, setIsEdit } = useState("");
   return (
     <>
+      <Background></Background>
+      <Test></Test>
       <Wrapper>
         <Login>
           <Logo>
             <img src="/images/boards/login/logo22.png" />
           </Logo>
-          <Writer
-            name="writer"
-            type="text"
-            placeholder="이메일을 적어주세요."
+          <Email__Input
+            name="email"
+            placeholder="이메일을 입력해주세요."
             onChange={props.onChangeInputs}
           />
-          <Error>{props.inputsErrors.writer}</Error>
-          <Password
+          <Error>{props.inputsErrors.email}</Error>
+          <Password__Input
             name="password"
-            type="password"
             placeholder="비밀번호를 입력해주세요."
             onChange={props.onChangeInputs}
           />
@@ -70,7 +68,7 @@ export default function LoginUI(props: ILoginUIProps) {
             <>|</>
             <PasswordFind>비밀번호 찾기</PasswordFind>
             <>|</>
-            <Signup>회원가입</Signup>
+            <Signup onClick={props.onClickMoveTosignup}>회원가입</Signup>
           </Find>
         </Login>
       </Wrapper>
