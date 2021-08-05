@@ -31,10 +31,22 @@ import {
   ButtonWrapper,
   SubmitButton,
 } from "./Registration.styles";
+import Modal from "antd/lib/modal/Modal";
+import DaumPostcode from "react-daum-postcode";
+import { IRegistrationUIProps } from "./Registration.types";
+import Uploads01 from "../../commons/uploads/01/Uploads01.container";
+import { useContext } from "react";
+import { BoardsEditPageContext } from "../../../../pages/boards/[boardId]/edit";
 
-export default function RegistrationUI() {
+export default function RegistrationUI(props: IRegistrationUIProps) {
+  const { isEdit, data } = useContext(BoardsEditPageContext);
   return (
     <>
+      {props.isOpen && (
+        <Modal visible={true}>
+          <DaumPostcode onComplete={props.onCompleteAddressSearch} autoClose />
+        </Modal>
+      )}
       <Wrapper>
         <Registration>상품 등록하기</Registration>
         <Product>상품명</Product>
@@ -69,13 +81,13 @@ export default function RegistrationUI() {
         </Location>
         <ImageWrapper>
           <Label>사진첨부</Label>
-          {/* {new Array(3).fill(1).map((data, index) => (
-              <Uploads01
-                key={`${data}_${index}`}
-                index={index}
-                onChangeFiles={props.onChangeFiles}
-              />
-            ))} */}
+          {new Array(2).fill(1).map((data, index) => (
+            <Uploads01
+              key={`${data}_${index}`}
+              index={index}
+              onChangeFiles={props.onChangeFiles}
+            />
+          ))}
         </ImageWrapper>
 
         <OptionWrapper>
@@ -87,12 +99,12 @@ export default function RegistrationUI() {
         </OptionWrapper>
 
         <ButtonWrapper>
-          {/* <SubmitButton
+          <SubmitButton
             onClick={isEdit ? props.onClickUpdate : props.onClickSubmit}
             active={props.active}
           >
-            {isEdit ? "수정하기" : "등록하기"}
-          </SubmitButton> */}
+            {isEdit ? "등록하기" : "등록하기"}
+          </SubmitButton>
         </ButtonWrapper>
       </Wrapper>
     </>

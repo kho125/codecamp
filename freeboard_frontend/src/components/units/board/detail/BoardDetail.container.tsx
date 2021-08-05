@@ -35,10 +35,6 @@ export default function BoardDetail() {
       alert(error.message);
     }
   }
-  let video;
-  if (data == null) video = "";
-  else if (data.fetchBoard.youtubeUrl == null) video = "";
-  else video = data.fetchBoard.youtubeUrl; // 가져온 data에서 fetchBoard의 youtubeUrl을 가져오는 것
 
   function onClickLike() {
     likeBoard({
@@ -61,12 +57,11 @@ export default function BoardDetail() {
   return (
     <BoardDetailUI
       data={data}
-      onClickLike={onClickLike}
-      onClickDislike={onClickDislike}
       onClickMoveToList={onClickMoveToList}
       onClickMoveToEdit={onClickMoveToEdit}
       onClickDelete={onClickDelete}
-      video={video}
+      onClickLike={onClickLike}
+      onClickDislike={onClickDislike}
     />
   );
 }

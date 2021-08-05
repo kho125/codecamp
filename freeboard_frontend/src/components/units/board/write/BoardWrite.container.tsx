@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { ChangeEvent, useState, useRef } from "react";
+import { ChangeEvent, useState } from "react";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD, UPDATE_BOARD, UPLOAD_FILE } from "./BoardWrite.queries";
 import { IBoardWriteProps } from "./BoardWrite.types";
@@ -20,17 +20,13 @@ export default function BoardWrite(props: IBoardWriteProps) {
   const [active, setActive] = useState(false);
   const [inputs, setInputs] = useState(INPUTS_INIT);
   const [inputsErrors, setInputsErrors] = useState(INPUTS_INIT);
-  const [createBoard] = useMutation(CREATE_BOARD);
-  const [updateBoard] = useMutation(UPDATE_BOARD);
   const [zipcode, setZipcode] = useState("");
+  const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
   const [address, setAddress] = useState("");
   const [addressDetail, setAddressDetail] = useState("");
-
-  const [imageUrl, setImageUrl] = useState("");
+  const [createBoard] = useMutation(CREATE_BOARD);
+  const [updateBoard] = useMutation(UPDATE_BOARD);
   const [uploadFile] = useMutation(UPLOAD_FILE);
-  const fileRef = useRef<HTMLInputElement>(null);
-  const fileRef2 = useRef<HTMLInputElement>(null);
-  const fileRef3 = useRef<HTMLInputElement>(null);
 
   function onChangeAddressDetail(event: ChangeEvent<HTMLInputElement>) {
     setAddressDetail(event.target.value);
@@ -57,23 +53,36 @@ export default function BoardWrite(props: IBoardWriteProps) {
     const isEvery = Object.values(inputs)
       .filter((data) => data !== "youtubeUrl")
       .every((data) => data);
-    if (isEvery) {
-      try {
-        const result = await createBoard({
-          variables: {
-            createBoardInput: {
-              ...inputs,
-              boardAddress: { zipcode, address, addressDetail },
+    if (!isEvery) return;
+
+    try {
+      // 이미지 업로드
+      const uploadFiles = files
+        .filter((data) => data)
+        .map((data) => uploadFile({ variables: { file: data } }));
+      const results = await Promise.all(uploadFiles);
+      const images = results.map((data) => data.data.uploadFile.url);
+
+      // 게시물 업로드
+      const result = await createBoard({
+        variables: {
+          createBoardInput: {
+            ...inputs,
+            boardAddress: {
+              zipcode: zipcode,
+              address: address,
+              addressDetail: addressDetail,
             },
+            images: images,
           },
-        });
-        Modal.confirm({
-          content: "게시물이 성공적으로 등록되었습니다.",
-          onOk: () => router.push(`/boards/${result.data.createBoard._id}`),
-        });
-      } catch (error) {
-        alert(error.message);
-      }
+        },
+      });
+      Modal.confirm({
+        content: "게시물이 성공적으로 등록되었습니다.",
+        onOk: () => router.push(`/boards/${result.data.createBoard._id}`),
+      });
+    } catch (error) {
+      alert(error.message);
     }
   }
 
@@ -118,52 +127,17 @@ export default function BoardWrite(props: IBoardWriteProps) {
     setIsOpen(false);
   }
 
-  async function onChangeFile(event: ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0];
-    if (!file?.size) {
-      // 파일 사이즈가 없으면
-      alert("파일이 없습니다");
-      return;
-    }
-    if (file?.size > 5 * 1024 * 1024) {
-      alert("파일 사이즈가 너무 큽니다(제한: 5MB)");
-      return; // 함수 종료
-    }
-    if (file.type.includes("png") && !file.type.includes("jpeg")) {
-      // png가 없다면 또는 jpeg도 없다면
-      alert("png 또는 jpeg 파일만 전송 가능합니다.");
-      return;
-    }
-
-    try {
-      const result = await uploadFile({
-        variables: {
-          aaa: file,
-        },
-      });
-      setImageUrl(result.data.uploadFile.url);
-    } catch (error) {
-      alert(error.message);
-    }
-  }
-
-  function openFile() {
-    fileRef?.current?.click();
-  }
-
-  function openFile2() {
-    fileRef2?.current?.click();
-  }
-
-  function openFile3() {
-    fileRef2?.current?.click();
+  function onChangeFiles(file: File, index: number) {
+    const newFiles = [...files];
+    newFiles[index] = file;
+    setFiles(newFiles);
   }
 
   return (
     <>
       <BoardWriteUI
         isOpen={isOpen}
-        isEdit={props.isEdit}
+        // isEdit={props.isEdit}
         active={active}
         zipcode={zipcode}
         address={address}
@@ -174,15 +148,8 @@ export default function BoardWrite(props: IBoardWriteProps) {
         onClickAddressSearch={onClickAddressSearch}
         onCompleteAddressSearch={onCompleteAddressSearch}
         onChangeAddressDetail={onChangeAddressDetail}
-        fileRef={fileRef}
-        fileRef2={fileRef2}
-        fileRef3={fileRef3}
-        openFile={openFile}
-        openFile2={openFile2}
-        openFile3={openFile3}
-        onChangeFile={onChangeFile}
+        onChangeFiles={onChangeFiles}
       />
-      {/* // <img src={`https://storage.googleapis.com/${imageUrl}`} /> */}
     </>
   );
 }

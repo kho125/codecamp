@@ -23,34 +23,15 @@ import {
   Zipcode,
   ZipcodeWrapper,
 } from "./BoardWrite.styles";
-import { INPUTS_INIT } from "./BoardWrite.container";
-import { IQuery } from "../../../../commons/types/generated/types";
 import Modal from "antd/lib/modal/Modal";
 import DaumPostcode from "react-daum-postcode";
+import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
+import { IBoardWriteUIProps } from "./BoardWrite.types";
+import { useContext } from "react";
+import { BoardsEditPageContext } from "../../../../../pages/boards/[boardId]/edit";
 
-interface IBoardWriteUIProps {
-  fileRef: LegacyRef<HTMLInputElement> | undefined;
-  openFile: MouseEventHandler<HTMLButtonElement> | undefined;
-  fileRef2: LegacyRef<HTMLInputElement> | undefined;
-  openFile2: MouseEventHandler<HTMLButtonElement> | undefined;
-  fileRef3: LegacyRef<HTMLInputElement> | undefined;
-  openFile3: MouseEventHandler<HTMLButtonElement> | undefined;
-  isEdit?: boolean;
-  active: boolean;
-  zipcode: string;
-  address: string;
-  inputsErrors: typeof INPUTS_INIT;
-  onChangeInputs: (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  onClickSubmit: () => void;
-  onClickUpdate: () => void;
-  onClickAddressSearch: () => void;
-  onCompleteAddressSearch: (data: any) => void;
-  onChangeAddressDetail: (event: ChangeEvent<HTMLInputElement>) => void;
-  data?: IQuery;
-}
 export default function BoardWriteUI(props: IBoardWriteUIProps) {
+  const { isEdit, data } = useContext(BoardsEditPageContext);
   return (
     <>
       {props.isOpen && (
@@ -59,7 +40,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
         </Modal>
       )}
       <Wrapper>
-        <Title>{props.isEdit ? "게시판 수정" : "게시판 등록"}</Title>
+        <Title>{isEdit ? "게시판 수정" : "게시판 등록"}</Title>
         <WriterWrapper>
           <InputWrapper>
             <Label>작성자</Label>
@@ -67,9 +48,8 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
               name="writer"
               type="text"
               placeholder="이름을 적어주세요."
+              defaultValue={data?.fetchBoard.writer || ""}
               onChange={props.onChangeInputs}
-              // defaultValue={props.data?.fetchBoard.writer || ""}
-              // readOnly={Boolean(props.data?.fetchBoard.writer)}
             />
             <Error>{props.inputsErrors.writer}</Error>
           </InputWrapper>
@@ -90,8 +70,8 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
             name="title"
             type="text"
             placeholder="제목을 작성해주세요."
+            defaultValue={data?.fetchBoard.title || ""}
             onChange={props.onChangeInputs}
-            // defaultValue={props.data?.fetchBoard.title}
           />
           <Error>{props.inputsErrors.title}</Error>
         </InputWrapper>
@@ -100,20 +80,25 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
           <Contents
             name="contents"
             placeholder="내용을 작성해주세요."
+            defaultValue={data?.fetchBoard.contents || ""}
             onChange={props.onChangeInputs}
-            // defaultValue={props.data?.fetchBoard.contents}
           />
           <Error>{props.inputsErrors.contents}</Error>
         </InputWrapper>
         <InputWrapper>
           <Label>주소</Label>
           <ZipcodeWrapper>
-            <Zipcode name="zipcode" placeholder="07250" value={props.zipcode} />
+            <Zipcode
+              name="zipcode"
+              placeholder="07250"
+              value={props.zipcode}
+              readOnly
+            />
             <SearchButton onClick={props.onClickAddressSearch}>
               우편번호 검색
             </SearchButton>
           </ZipcodeWrapper>
-          <Address readOnly />
+          <Address value={props.address} readOnly />
           <Address onChange={props.onChangeAddressDetail} />
         </InputWrapper>
         <InputWrapper>
@@ -126,33 +111,13 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
         </InputWrapper>
         <ImageWrapper>
           <Label>사진첨부</Label>
-          <UploadButton onClick={props.openFile}>
-            <input
-              type="file"
-              style={{ display: "none" }}
-              ref={props.fileRef}
+          {new Array(3).fill(1).map((data, index) => (
+            <Uploads01
+              key={`${data}_${index}`}
+              index={index}
+              onChangeFiles={props.onChangeFiles}
             />
-            <div>+</div>
-            <div>Upload</div>
-          </UploadButton>
-          <UploadButton onClick={props.openFile2}>
-            <input
-              type="file"
-              style={{ display: "none" }}
-              ref={props.fileRef2}
-            />
-            <div>+</div>
-            <div>Upload</div>
-          </UploadButton>
-          <UploadButton onClick={props.openFile3}>
-            <input
-              type="file"
-              style={{ display: "none" }}
-              ref={props.fileRef3}
-            />
-            <div>+</div>
-            <div>Upload</div>
-          </UploadButton>
+          ))}
         </ImageWrapper>
         <OptionWrapper>
           <Label>메인설정</Label>
@@ -163,10 +128,10 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
         </OptionWrapper>
         <ButtonWrapper>
           <SubmitButton
-            onClick={props.isEdit ? props.onClickUpdate : props.onClickSubmit}
+            onClick={isEdit ? props.onClickUpdate : props.onClickSubmit}
             active={props.active}
           >
-            {props.isEdit ? "수정하기" : "등록하기"}
+            {isEdit ? "수정하기" : "등록하기"}
           </SubmitButton>
         </ButtonWrapper>
       </Wrapper>

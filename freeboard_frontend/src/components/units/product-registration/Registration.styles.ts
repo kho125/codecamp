@@ -243,7 +243,6 @@ export const RadioLabel = styled.label`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: center;
   padding-top: 80px;
 `;
