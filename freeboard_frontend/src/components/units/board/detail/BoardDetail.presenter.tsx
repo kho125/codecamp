@@ -10,7 +10,8 @@ import {
   Header,
   IconWrapper,
   Info,
-  // Img,
+  ImageWrapper,
+  Image,
   LinkIcon,
   LocationIcon,
   Title,
@@ -22,6 +23,7 @@ import {
   LikeCount,
   DislikeIcon,
   DislikeCount,
+  LikeIcon,
 } from "./BoardDetail.styles";
 import { IBoardDetailUIProps } from "./BoardDetail.types";
 
@@ -43,18 +45,30 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
               placement="topRight"
               title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
             >
-              <LocationIcon src="/images/board/detail/location.png" />
+              <LocationIcon src="/images/boards/detail/location.png" />
             </Tooltip>
           </IconWrapper>
         </Header>
         <Body>
           <Title>{props.data?.fetchBoard.title}</Title>
+          <ImageWrapper>
+            {props.data?.fetchBoard.images?.map((data: string) => (
+              <Image
+                key={data}
+                src={`https://storage.googleapis.com/${data}`}
+              />
+            ))}
+          </ImageWrapper>
           <Contents>{props.data?.fetchBoard.contents}</Contents>
-          {/* <Img src={props.imgUrl}></Img> */}
-          <Youtube url={[props.video]} />
+
+          <Youtube
+            url={props.data?.fetchBoard.youtubeUrl}
+            width="486px"
+            height="240px"
+          />
           <LikeWrapper>
             <IconWrapper>
-              <LinkIcon onClick={props.onClickLike} />
+              <LikeIcon onClick={props.onClickLike} />
               <LikeCount>{props.data?.fetchBoard.likeCount}</LikeCount>
             </IconWrapper>
             <IconWrapper>

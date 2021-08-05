@@ -23,7 +23,6 @@ export const CardWrapper = styled.div`
 export const Header = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #bdbdbd;
@@ -32,7 +31,6 @@ export const Header = styled.div`
 
 export const AvatarWrapper = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 
 export const Avatar = styled.img`
@@ -44,11 +42,6 @@ export const Info = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
-
-// export const Img = styled.img`
-//   width: 200px;
-//   height: 220px;
-// `;
 
 export const Writer = styled.div``;
 
@@ -71,6 +64,17 @@ export const Title = styled.h1`
   padding-top: 80px;
 `;
 
+export const ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Image = styled.img`
+  width: 996px;
+  height: 480px;
+  margin-bottom: 30px;
+`;
+
 export const Contents = styled.div`
   padding-top: 40px;
   padding-bottom: 120px;
@@ -82,7 +86,6 @@ export const Youtube = styled(ReactPlayer)`
 
 export const BottomWrapper = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: center;
   padding-top: 80px;
 `;
@@ -104,7 +107,6 @@ export const Button = styled.button`
 export const LikeWrapper = styled.div`
   padding-top: 160px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
 `;
 

@@ -1,4 +1,4 @@
-// import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 // import { useRouter } from "next/router";
 import { useState } from "react";
 import RegistrationUI from "./Registration.presenter";
@@ -21,7 +21,7 @@ export const INPUTS_INIT = {
   youtubeUrl: "",
 };
 
-export default function Registration() {
+export default function Registration(props) {
   // const router = useRouter();
   // const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState(false);
@@ -30,7 +30,7 @@ export default function Registration() {
   // const [zipcode, setZipcode] = useState("");
   // const [address, setAddress] = useState("");
   // const [addressDetail, setAddressDetail] = useState("");
-  // const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
+  const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
   // const [createBoard] = useMutation(CREATE_BOARD);
   // const [updateBoard] = useMutation(UPDATE_BOARD);
   // const [uploadFile] = useMutation(UPLOAD_FILE);
@@ -48,11 +48,17 @@ export default function Registration() {
     setInputsErrors({ ...inputsErrors, [event.target.name]: "" });
   }
 
+  function onChangeFiles(file: File, index: number) {
+    const newFiles = [...files];
+    newFiles[index] = file;
+    setFiles(newFiles);
+  }
+
   return (
     <>
       <RegistrationUI
         // isOpen={isOpen}
-        // isEdit={props.isEdit}
+        isEdit={props.isEdit}
         // active={active}
         // zipcode={zipcode}
         // address={address}
@@ -63,7 +69,7 @@ export default function Registration() {
         // onClickAddressSearch={onClickAddressSearch}
         // onCompleteAddressSearch={onCompleteAddressSearch}
         onChangeAddressDetail={onChangeAddressDetail}
-        // onChangeFiles={onChangeFiles}
+        onChangeFiles={onChangeFiles}
       />
     </>
   );
