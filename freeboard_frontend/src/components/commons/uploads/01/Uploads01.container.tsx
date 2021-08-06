@@ -19,7 +19,7 @@ export default function Uploads01(props: IUploads01Props) {
     fileReader.readAsDataURL(file);
     fileReader.onload = (data) => {
       setFileUrl(data.target?.result as string);
-      // props.onChangeFiles(file, props.index);
+      props.onChangeFiles(file, props.index);
     };
   }
 

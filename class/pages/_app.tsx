@@ -29,13 +29,18 @@ if (typeof window !== "undefined") {
 interface IContext {
   accessToken: string;
   setAccessToken: Dispatch<SetStateAction<string>>;
+  useInfo: any;
+  setUserInfo: any;
 }
 export const GlobalContext = createContext<IContext>({});
 function MyApp({ Component, pageProps }: AppProps) {
   const [accessToken, setAccessToken] = useState("");
-  const value = {
+  const [userInfo, setUserInfo] = useState({});
+  const values = {
     accessToken: accessToken,
     setAccessToken: setAccessToken,
+    userInfo: userInfo,
+    setUserInfo: setUserInfo,
   };
 
   const uploadLink = createUploadLink({
@@ -52,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   });
 
   return (
-    <GlobalContext.Provider value={value}>
+    <GlobalContext.Provider value={values}>
       <ApolloProvider client={client}>
         <Layout>
           <Global styles={globalStyles} />

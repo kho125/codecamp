@@ -11,23 +11,32 @@ import Layout from "../src/components/commons/layout";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
 import { createUploadLink } from "apollo-upload-client";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
+import "antd/dist/antd.css";
 
-import { createContext, useState } from "react";
+interface IGlobalContext {
+  accessToken?: string;
+  setAccessToken?: Dispatch<SetStateAction<string>>;
+  useInfo: any;
+  setUserInfo: any;
+}
 
-// function MyApp({ Component, pageProps }: AppProps) {
-//   const client = new ApolloClient({
-//     uri: "http://backend02.codebootcamp.co.kr/graphql",
-//     cache: new InMemoryCache(),
-//   });
-// }
-
-export const GlobalContext = createContext({});
+export const GlobalContext = createContext<IGlobalContext>({});
 function MyApp({ Component, pageProps }: AppProps) {
-  const [accessToken, setAccessToken] = useState();
+  const [accessToken, setAccessToken] = useState("");
+  const [userInfo, setUserInfo] = useState({});
+
+  const values = {
+    accessToken: accessToken,
+    setAccessToken: setAccessToken,
+    userInfo: userInfo,
+    setUserInfo: setUserInfo,
+  };
+
   const uploadLink = createUploadLink({
     uri: "http://backend02.codebootcamp.co.kr/graphql",
     headers: {
-      authorization: `bearer ${accessToken}`,
+      authorization: `Bearer ${accessToken}`,
     },
   });
 
@@ -38,7 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   });
 
   return (
-    <GlobalContext.Provider value={{ accessToken, setAccessToken }}>
+    <GlobalContext.Provider value={values}>
       <ApolloProvider client={client}>
         <Layout aaa={true}>
           <Global styles={globalStyles} />

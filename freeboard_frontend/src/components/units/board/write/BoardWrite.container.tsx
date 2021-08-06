@@ -56,10 +56,12 @@ export default function BoardWrite(props: IBoardWriteProps) {
     if (!isEvery) return;
 
     try {
+      console.log(files);
+
       // 이미지 업로드
       const uploadFiles = files
         .filter((data) => data)
-        .map((data) => uploadFile({ variables: { file: data } }));
+        .map((data) => uploadFile({ variables: { aaa: data } }));
       const results = await Promise.all(uploadFiles);
       const images = results.map((data) => data.data.uploadFile.url);
 

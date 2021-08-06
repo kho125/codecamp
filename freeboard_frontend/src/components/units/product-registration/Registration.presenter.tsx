@@ -100,10 +100,14 @@ export default function RegistrationUI(props: IRegistrationUIProps) {
 
         <ButtonWrapper>
           <SubmitButton
-            onClick={isEdit ? props.onClickUpdate : props.onClickSubmit}
+            //   onClick={isEdit ? props.onClickUpdate : props.onClickSubmit}
+            //   active={props.active}
+            // >
+            //   {isEdit ? "등록하기" : "등록하기"}
+            onClick={props.onClickUpdate}
             active={props.active}
           >
-            {isEdit ? "등록하기" : "등록하기"}
+            등록하기
           </SubmitButton>
         </ButtonWrapper>
       </Wrapper>

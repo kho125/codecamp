@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 import { INPUTS_INIT } from "./Registration.container";
 
-export interface IRegistrationUIProps {
+export interface IRegistrationProps {
   isEdit?: boolean;
 }
 
