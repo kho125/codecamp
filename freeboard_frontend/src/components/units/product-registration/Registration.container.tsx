@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/client";
+// import { useMutation } from "@apollo/lient";
 // import { useRouter } from "next/router";
 import { useState } from "react";
 import RegistrationUI from "./Registration.presenter";
@@ -10,7 +10,7 @@ import RegistrationUI from "./Registration.presenter";
 //   UPDATE_BOARD,
 //   UPLOAD_FILE,
 // } from "./Registration.queries";
-// import { IRegistrationProps } from "./Registration.types";
+import { IRegistrationProps } from "./Registration.types";
 // import { Modal } from "antd";
 
 export const INPUTS_INIT = {
@@ -18,10 +18,9 @@ export const INPUTS_INIT = {
   password: "",
   title: "",
   contents: "",
-  youtubeUrl: "",
 };
 
-export default function Registration(props) {
+export default function Registration(props: IRegistrationProps) {
   // const router = useRouter();
   // const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState(false);

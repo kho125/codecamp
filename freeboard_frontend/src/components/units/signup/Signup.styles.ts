@@ -63,9 +63,11 @@ export const Email__Input = styled.input`
   border-radius: 16px;
   margin-bottom: 20px;
   padding-left: 16px;
+  transition: 0.5s;
   :focus {
     outline: none;
     box-shadow: 1px 1px 8px;
+    transition: 0.5s;
   }
 `;
 
@@ -81,9 +83,11 @@ export const Name__Input = styled.input`
   border-radius: 16px;
   margin-bottom: 20px;
   padding-left: 16px;
+  transition: 0.5s;
   :focus {
     outline: none;
     box-shadow: 1px 1px 8px;
+    transition: 0.5s;
   }
 `;
 
@@ -99,9 +103,11 @@ export const Password__Input = styled.input`
   border-radius: 16px;
   margin-bottom: 20px;
   padding-left: 16px;
+  transition: 0.5s;
   :focus {
     outline: none;
     box-shadow: 1px 1px 8px;
+    transition: 0.5s;
   }
 `;
 
@@ -117,9 +123,11 @@ export const Password2__Input = styled.input`
   border-radius: 16px;
   margin-bottom: 60px;
   padding-left: 16px;
+  transition: 0.5s;
   :focus {
     outline: none;
     box-shadow: 1px 1px 8px;
+    transition: 0.5s;
   }
 `;
 

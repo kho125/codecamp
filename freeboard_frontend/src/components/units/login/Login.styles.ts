@@ -53,9 +53,10 @@ export const Email__Input = styled.input`
   font-size: 16px;
   line-height: 24px;
   color: #fff;
-  /* opacity: 0.6; */
+  transition: 0.3s;
   :focus {
     outline: none;
+    transition: 0.3s;
     box-shadow: 1px 1px 10px;
   }
 `;
@@ -71,9 +72,10 @@ export const Password__Input = styled.input`
   font-size: 16px;
   line-height: 24px;
   color: #fff;
-  /* opacity: 0.6; */
+  transition: 0.3s;
   :focus {
     outline: none;
+    transition: 0.3s;
     box-shadow: 1px 1px 10px;
   }
 `;
