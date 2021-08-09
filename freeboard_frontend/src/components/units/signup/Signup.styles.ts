@@ -3,7 +3,7 @@ import { ISubmitButtonProps } from "./Signup.types";
 
 export const Wrapper = styled.div`
   width: 1920px;
-  height: 100vh;
+  padding-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,16 +53,17 @@ export const Information = styled.div`
 
 export const Email__Title = styled.div`
   margin-bottom: 12px;
+  margin-top: 20px;
 `;
 
 export const Email__Input = styled.input`
   width: 384px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   border-radius: 16px;
-  margin-bottom: 20px;
   padding-left: 16px;
+  margin-bottom: 12px;
   transition: 0.5s;
   :focus {
     outline: none;
@@ -73,16 +74,17 @@ export const Email__Input = styled.input`
 
 export const Name__Title = styled.div`
   margin-bottom: 12px;
+  margin-top: 20px;
 `;
 
 export const Name__Input = styled.input`
   width: 384px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   border-radius: 16px;
-  margin-bottom: 20px;
   padding-left: 16px;
+  margin-bottom: 12px;
   transition: 0.5s;
   :focus {
     outline: none;
@@ -93,16 +95,18 @@ export const Name__Input = styled.input`
 
 export const Password__Title = styled.div`
   margin-bottom: 12px;
+  margin-top: 20px;
 `;
 
 export const Password__Input = styled.input`
   width: 384px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   border-radius: 16px;
-  margin-bottom: 20px;
   padding-left: 16px;
+  margin-bottom: 12px;
+
   transition: 0.5s;
   :focus {
     outline: none;
@@ -113,15 +117,15 @@ export const Password__Input = styled.input`
 
 export const Password2__Title = styled.div`
   margin-bottom: 12px;
+  margin-top: 20px;
 `;
 
 export const Password2__Input = styled.input`
   width: 384px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   border-radius: 16px;
-  margin-bottom: 60px;
   padding-left: 16px;
   transition: 0.5s;
   :focus {
@@ -136,10 +140,12 @@ export const Signup__Button = styled.button`
   height: 64px;
   background-color: #4f4f4f;
   border-radius: 16px;
+
   border: none;
   color: #111;
   font-weight: bold;
   font-size: 16px;
+  margin-top: 50px;
   margin-bottom: 40px;
   cursor: pointer;
   transition: 0.5s;
@@ -148,7 +154,7 @@ export const Signup__Button = styled.button`
 `;
 
 export const Error = styled.div`
-  /* margin-top: -30px; */
+  margin: 10px 0 -15px 0;
   font-size: 14px;
   line-height: 20px;
   color: #ff0000;

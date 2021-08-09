@@ -26,7 +26,6 @@ export const Title = styled.div`
 export const WriterWrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding-top: 40px;
 `;
@@ -88,7 +87,7 @@ export const SearchButton = styled.button`
   background-color: black;
   cursor: pointer;
   color: #fff;
-  border: none;
+  /* border: none; */
 `;
 
 export const Address = styled.input`

@@ -9,15 +9,12 @@ export const Wrapper = styled.div`
 
 export const CardWrapper = styled.div`
   border: 1px solid black;
-  padding-top: 80px;
-  padding-bottom: 100px;
-  padding-left: 102px;
-  padding-right: 102px;
+  padding: 80px 102px 100px 102px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: none;
-  box-shadow: 0 0 10px gray;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 `;
 
 export const Header = styled.div`
@@ -99,8 +96,8 @@ export const Button = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: gold;
-    border-color: white;
+    background-color: #ffd600;
+    border: none;
   }
 `;
 

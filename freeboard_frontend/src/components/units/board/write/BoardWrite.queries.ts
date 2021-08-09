@@ -25,8 +25,8 @@ export const UPDATE_BOARD = gql`
 `;
 
 export const UPLOAD_FILE = gql`
-  mutation uploadFile($aaa: Upload!) {
-    uploadFile(file: $aaa) {
+  mutation uploadFile($file: Upload!) {
+    uploadFile(file: $file) {
       url
     }
   }

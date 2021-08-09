@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import { ISubmitButtonProps } from "./Registration.types";
+import { ISubmitButtonProps } from "./ProductRegistration.types";
 
 export const Wrapper = styled.div`
   width: 1200px;
   height: 1847px;
-  border: 1px solid black;
+  border: 1px solid #000;
   margin: 80px 360px 301px;
   padding: 80px 102px 100px 102px;
   display: flex;

@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { INPUTS_INIT } from "./Registration.container";
+import { INPUTS_INIT } from "./ProductRegistration.container";
 
 export interface IRegistrationProps {
   isEdit?: boolean;

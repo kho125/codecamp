@@ -30,13 +30,13 @@ import {
   RadioLabel,
   ButtonWrapper,
   SubmitButton,
-} from "./Registration.styles";
+} from "./ProductRegistration.styles";
 import Modal from "antd/lib/modal/Modal";
 import DaumPostcode from "react-daum-postcode";
-import { IRegistrationUIProps } from "./Registration.types";
-import Uploads01 from "../../commons/uploads/01/Uploads01.container";
+import { IRegistrationUIProps } from "./ProductRegistration.types";
+import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import { useContext } from "react";
-import { BoardsEditPageContext } from "../../../../pages/boards/[boardId]/edit";
+import { BoardsEditPageContext } from "../../../../../pages/boards/[boardId]/edit";
 
 export default function RegistrationUI(props: IRegistrationUIProps) {
   const { isEdit, data } = useContext(BoardsEditPageContext);
@@ -100,14 +100,10 @@ export default function RegistrationUI(props: IRegistrationUIProps) {
 
         <ButtonWrapper>
           <SubmitButton
-            //   onClick={isEdit ? props.onClickUpdate : props.onClickSubmit}
-            //   active={props.active}
-            // >
-            //   {isEdit ? "등록하기" : "등록하기"}
-            onClick={props.onClickUpdate}
+            onClick={isEdit ? props.onClickUpdate : props.onClickSubmit}
             active={props.active}
           >
-            등록하기
+            {isEdit ? "등록하기" : "등록하기"}
           </SubmitButton>
         </ButtonWrapper>
       </Wrapper>
