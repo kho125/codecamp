@@ -18,7 +18,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/units/boardComment/write/BoardCommentWrite.container.js"
+    "src/components/units/boardComment/write/BoardCommentWrite.container.js",
+    "pages/quiz/quiz1/quiz8-9/index.js"
   ],
   "exclude": ["node_modules"]
 }

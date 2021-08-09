@@ -1,4 +1,3 @@
-import { ChangeEvent, LegacyRef, MouseEventHandler } from "react";
 import {
   Error,
   Address,
@@ -15,7 +14,6 @@ import {
   Subject,
   SubmitButton,
   Title,
-  UploadButton,
   Wrapper,
   Writer,
   WriterWrapper,

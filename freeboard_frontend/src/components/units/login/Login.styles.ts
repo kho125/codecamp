@@ -42,7 +42,7 @@ export const Logo = styled.div`
 `;
 
 export const Email__Input = styled.input`
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   width: 384px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
@@ -63,6 +63,7 @@ export const Email__Input = styled.input`
 
 export const Password__Input = styled.input`
   width: 384px;
+  margin-bottom: 10px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #ffffff;
@@ -142,8 +143,8 @@ export const Signup = styled.div`
 `;
 
 export const Error = styled.div`
-  /* padding-top: -20px; */
   font-size: 14px;
   line-height: 20px;
+  margin: 5px 0 10px 0;
   color: #ff0000;
 `;
