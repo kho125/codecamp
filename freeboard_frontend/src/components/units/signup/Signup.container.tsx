@@ -2,6 +2,7 @@ import SignupUI from "./Signup.presenter";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "./Signup.queries";
+import router from "next/router";
 
 const inputsInit = {
   email: "",
@@ -53,15 +54,6 @@ export default function Signup() {
     const isEvery = Object.values(inputs).every((data) => data);
     if (!isEvery) return;
 
-    // if (!/\w+@\w+\.\w+/.test(inputs.email)) {
-    //   alert("제대로된 이메일 적으세요");
-    // } else if (inputs.name === "") {
-    //   alert("이름은 있어야지요~");
-    // } else if (!/^[a-zA-Z0-9]{8,16}$/.test(inputs.password)) {
-    //   alert("비밀번호는 8자리 이상 16자리 이하를 써주세요");
-    // } else if (inputs.password !== inputs.repassword) {
-    //   alert("비밀번호확인은 제대로 치세요");
-    // } else {
     try {
       const result = await createuser({
         variables: {
@@ -72,7 +64,8 @@ export default function Signup() {
           },
         },
       });
-      alert("회원가입 축하드립니다.");
+      alert("완료되었습니다.");
+      router.push("/login");
       alert(result.data.createUser._id);
     } catch (error) {
       alert(error.message);

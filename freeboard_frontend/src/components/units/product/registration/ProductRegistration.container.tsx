@@ -1,6 +1,8 @@
+import { useForm } from "antd/lib/form/Form";
 import { useState } from "react";
 import RegistrationUI from "./ProductRegistration.presenter";
 import { IRegistrationProps } from "./ProductRegistration.types";
+// import "react-quill/dist/quill.snow.css";
 
 export const INPUTS_INIT = {
   writer: "",
@@ -13,7 +15,11 @@ export default function Registration(props: IRegistrationProps) {
   const [active, setActive] = useState(false);
   const [inputs, setInputs] = useState(INPUTS_INIT);
   const [inputsErrors, setInputsErrors] = useState(INPUTS_INIT);
+  const { setValue } = useForm();
   const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
+  const onChangeContents = (value) => {
+    setValue("contents", value);
+  };
   // const [createBoard] = useMutation(CREATE_BOARD);
   // const [updateBoard] = useMutation(UPDATE_BOARD);
   // const [uploadFile] = useMutation(UPLOAD_FILE);
@@ -87,6 +93,7 @@ export default function Registration(props: IRegistrationProps) {
         active={active}
         inputsErrors={inputsErrors}
         onChangeInputs={onChangeInputs}
+        onChange={onChangeContents}
         onChangeAddressDetail={onChangeAddressDetail}
         onChangeFiles={onChangeFiles}
       />

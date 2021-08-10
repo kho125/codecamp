@@ -7,7 +7,7 @@ import {
   MyPage,
   Bar,
 } from "./LayoutNavigation.styles";
-import { ILayoutNavigationUIProps } from "./LauoutNavigation.types";
+import { ILayoutNavigationUIProps } from "./LayoutNavigation.types";
 
 export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
   return (
@@ -21,7 +21,7 @@ export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
           자유게시판
         </FreeBoard>
         <Bar>ㅣ</Bar>
-        <Market id="/products" onClick={props.onClickMenu}>
+        <Market id="/product/main" onClick={props.onClickMenu}>
           중고마켓
         </Market>
         <Bar>ㅣ</Bar>

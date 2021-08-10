@@ -34,8 +34,12 @@ export default function Login() {
 
   async function onClickSubmit(event) {
     setInputsErrors({
-      email: /\w+@\w+\.com$/.test(inputs.email) ? "" : "올바른 이메일^^",
-      password: /^[a-zA-Z0-9]{8,16}$/.test(inputs.password) ? "" : "8~16으로",
+      email: /\w+@\w+\.com$/.test(inputs.email)
+        ? ""
+        : "이메일이 잘못되었습니다.",
+      password: /^[a-zA-Z0-9]{8,16}$/.test(inputs.password)
+        ? ""
+        : "8~16자리로 입력해주세요",
     });
 
     try {
@@ -48,7 +52,7 @@ export default function Login() {
       setAccessToken(result.data?.loginUser.accessToken);
       console.log(result.data?.loginUser.accessToken);
       alert("로그인성공");
-      router.push("/market/loginsuccess");
+      router.push("/product/main");
     } catch (error) {
       alert(error.message);
     }
