@@ -43,6 +43,10 @@ export default function SignupPage() {
         },
       });
       setAccessToken(result.data?.loginUser.accessToken || ""); // || "" -> 레드줄 없어짐
+      localStorage.setItem(
+        "accessToken",
+        result.data?.loginUser.accessToken || ""
+      );
       // router.push("/22-login-success");
       router.push("/23-hoc");
     } catch (error) {
