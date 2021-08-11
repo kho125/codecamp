@@ -5,7 +5,7 @@ export const Wrapper = styled.div``;
 export const Main = styled.div`
   height: 100%;
   border: 1px solid #000;
-  margin: 0 200px 300px;
+  /* margin: 0 200px 300px; */
   padding: 80px 102px 100px 102px;
   display: flex;
   flex-direction: column;
@@ -34,6 +34,12 @@ export const Best__Box = styled.div`
   width: 282px;
   height: 391px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.5s;
+  :hover {
+    background-color: #ffd600;
+    transition: 0.5s;
+  }
 `;
 
 export const Best__Img = styled.img`
@@ -100,11 +106,21 @@ export const Onsale = styled.div`
   margin-right: 20px;
   font-size: 18px;
   line-height: 27px;
+  color: #555;
+  cursor: pointer;
+  :active {
+    color: #000;
+  }
 `;
 
 export const Soldout = styled.div`
   font-size: 18px;
   line-height: 27px;
+  color: #555;
+  cursor: pointer;
+  :active {
+    color: #000;
+  }
 `;
 
 export const Search__Right = styled.div``;
@@ -150,8 +166,8 @@ export const Search__Button = styled.button`
 export const Products = styled.div`
   /* display: flex;
   flex-direction: column; */
-  /* overflow: scroll; */
-  /* overflow: auto; */
+  overflow: scroll;
+  overflow: auto;
 `;
 
 export const Bar = styled.div`
@@ -161,7 +177,7 @@ export const Bar = styled.div`
 
 export const Sale = styled.div`
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 `;
 
 export const Sale2 = styled.div`
@@ -245,8 +261,31 @@ export const Money = styled.span`
   line-height: 36px;
 `;
 
+export const Button = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
 export const Registration = styled.button`
-  position: relative;
+  width: 124px;
+  height: 52px;
+  margin-top: 40px;
+  padding-top: 5px;
+  width: 124px;
+  height: 52px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #fff;
+  border: 1px solid #ffd600;
+  cursor: pointer;
+  transition: 0.5s;
+  :hover {
+    background-color: #ffd600;
+    transition: 0.5s;
+  }
+
+  /* position: relative;
   display: inline-flex;
   padding: 10px 30px;
   background: #363636;
@@ -272,34 +311,16 @@ export const Registration = styled.button`
   :hover::before {
     width: 300px;
     height: 300px;
-  }
+  } */
 
-  /* margin-top: 40px; */
-  /* padding-top: 5px;
-  width: 124px;
-  height: 52px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: #fff;
-  border: 1px solid #ffd600;
-  cursor: pointer;
-  transition: 0.5s;
-
-  position: absolute;
+  /* position: absolute;
   top: ${(props) => props.buttonY};
   left: ${(props) => props.buttonX};
   transform: translate(-50%, -50%);
   transition: width 0.5s, height 0.5s; */
-
-  /* :hover {
-    background-color: #ffd600;
-    transition: 0.5s;
-  } */
 `;
 
-export const Button = styled.div`
-  /* margin-right: 24px; */
+export const Llrr = styled.span`
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
 `;

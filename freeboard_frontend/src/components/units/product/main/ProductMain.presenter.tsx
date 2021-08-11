@@ -229,16 +229,16 @@ export default function ProductMainUI(props: IProductMainUIProps) {
           <Bar></Bar>
         </Products>
 
-        {/* <Button> */}
-        <Registration
-          buttonX={props.buttonX}
-          buttonY={props.buttonY}
-          ref={props.buttonRef}
-          onMouseMove={props.onMouseMoveButton}
-        >
-          상품 등록하기
-        </Registration>
-        {/* </Button> */}
+        <Button>
+          <Registration
+          // buttonX={props.buttonX}
+          // buttonY={props.buttonY}
+          // ref={props.buttonRef}
+          // onMouseMove={props.onMouseMoveButton}
+          >
+            상품 등록하기
+          </Registration>
+        </Button>
       </Main>
     </Wrapper>
   );
