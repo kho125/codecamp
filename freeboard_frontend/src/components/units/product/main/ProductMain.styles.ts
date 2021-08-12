@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { ITextTokenProps } from "./ProductMain.types";
 
 export const Wrapper = styled.div``;
 
@@ -91,77 +92,77 @@ export const Heart__Count = styled.span`
   line-height: 24px;
 `;
 
-export const Searchs = styled.div`
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+// export const Searchs = styled.div`
+//   margin-bottom: 40px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// `;
 
-export const Search__Left = styled.div`
-  display: flex;
-`;
+// export const Search__Left = styled.div`
+//   display: flex;
+// `;
 
-export const Onsale = styled.div`
-  margin-right: 20px;
-  font-size: 18px;
-  line-height: 27px;
-  color: #555;
-  cursor: pointer;
-  :active {
-    color: #000;
-  }
-`;
+// export const Onsale = styled.div`
+//   margin-right: 20px;
+//   font-size: 18px;
+//   line-height: 27px;
+//   color: #555;
+//   cursor: pointer;
+//   :active {
+//     color: #000;
+//   }
+// `;
 
-export const Soldout = styled.div`
-  font-size: 18px;
-  line-height: 27px;
-  color: #555;
-  cursor: pointer;
-  :active {
-    color: #000;
-  }
-`;
+// export const Soldout = styled.div`
+//   font-size: 18px;
+//   line-height: 27px;
+//   color: #555;
+//   cursor: pointer;
+//   :active {
+//     color: #000;
+//   }
+// `;
 
-export const Search__Right = styled.div``;
+// export const Search__Right = styled.div``;
 
-export const Search__Input = styled.input`
-  width: 282px;
-  height: 52px;
-  background-color: #f2f2f2;
-  padding-left: 11.51px;
-  border: none;
-  :focus {
-    outline: 0;
-  }
-`;
+// export const Search__Input = styled.input`
+//   width: 282px;
+//   height: 52px;
+//   background-color: #f2f2f2;
+//   padding-left: 11.51px;
+//   border: none;
+//   :focus {
+//     outline: 0;
+//   }
+// `;
 
-export const Date__Input = styled.input`
-  margin-left: 24px;
-  padding-left: 10px;
-  width: 282px;
-  height: 52px;
-  border: 1px solid #f2f2f2;
-  border-radius: 10px;
-  :focus {
-    outline: 0;
-  }
-`;
+// export const Date__Input = styled.input`
+//   margin-left: 24px;
+//   padding-left: 10px;
+//   width: 282px;
+//   height: 52px;
+//   border: 1px solid #f2f2f2;
+//   border-radius: 10px;
+//   :focus {
+//     outline: 0;
+//   }
+// `;
 
-export const Search__Button = styled.button`
-  margin-left: 24px;
-  width: 78px;
-  height: 52px;
-  color: #fff;
-  background-color: #000;
-  border: none;
-  transition: 0.3s;
+// export const Search__Button = styled.button`
+//   margin-left: 24px;
+//   width: 78px;
+//   height: 52px;
+//   color: #fff;
+//   background-color: #000;
+//   border: none;
+//   transition: 0.3s;
 
-  :hover {
-    transition: 0.3s;
-    background-color: #444;
-  }
-`;
+//   :hover {
+//     transition: 0.3s;
+//     background-color: #444;
+//   }
+// `;
 
 export const Products = styled.div`
   /* display: flex;
@@ -171,7 +172,6 @@ export const Products = styled.div`
 `;
 
 export const Bar = styled.div`
-  /* width: 1200px; */
   border: 1px solid #bdbdbd;
 `;
 
@@ -245,7 +245,6 @@ export const Heart__Count2 = styled.span`
 
 export const Price = styled.div`
   display: flex;
-
   align-items: center;
 `;
 
@@ -284,43 +283,13 @@ export const Registration = styled.button`
     background-color: #ffd600;
     transition: 0.5s;
   }
-
-  /* position: relative;
-  display: inline-flex;
-  padding: 10px 30px;
-  background: #363636;
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: 1px;
-  overflow: hidden;
-  z-index: 1;
-
-  :before {
-    content: "";
-    position: absolute;
-    top: ${(props) => props.buttonY};
-    left: ${(props) => props.buttonX};
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: #2196f3;
-    transition: width 0.5s, height 0.5s;
-  }
-
-  :hover::before {
-    width: 300px;
-    height: 300px;
-  } */
-
-  /* position: absolute;
-  top: ${(props) => props.buttonY};
-  left: ${(props) => props.buttonX};
-  transform: translate(-50%, -50%);
-  transition: width 0.5s, height 0.5s; */
 `;
 
 export const Llrr = styled.span`
   display: flex;
   flex-direction: column;
 `;
+
+// export const TextToken = styled.span`
+//   color: ${(props: ITextTokenProps) => (props.isMatched ? "red" : "black")};
+// `;
