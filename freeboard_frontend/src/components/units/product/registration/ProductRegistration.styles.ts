@@ -1,15 +1,16 @@
 import styled from "@emotion/styled";
 import { ISubmitButtonProps } from "./ProductRegistration.types";
+import "react-quill/dist/quill.snow.css";
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export const Wrapper = styled.div`
-  width: 1200px;
   height: 1847px;
   border: 1px solid #000;
   margin: 80px 360px 301px;
   padding: 80px 102px 100px 102px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   border: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 `;
@@ -68,16 +69,11 @@ export const Explanation = styled.div`
   line-height: 24px;
 `;
 
-export const Explanation__Input = styled.input`
-  border: 1px solid #bdbdbd;
-  padding: 14px 839px 230px 16px;
-  margin-bottom: 40px;
-  transition: 0.5s;
-  :focus {
-    outline: 0;
-    box-shadow: 1px 1px 3px #999;
-    transition: 0.5s;
-  }
+// ReactQuill을 사용했으니 이름을 정하고 스타일에 (가로안에 넣기)
+export const ReactQuill__Input = styled(ReactQuill)`
+  /* background-color: #06f; */
+  height: 100%;
+  margin-bottom: 85px;
 `;
 
 export const Price = styled.div`

@@ -3,7 +3,7 @@ import { gql, useMutation } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 // import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import "react-quill/dist/quill.snow.css";
 
 import dynamic from "next/dynamic";
 
@@ -21,9 +21,7 @@ const CREATE_BOARD = gql`
 
 export default function WebEditorPage() {
   const router = useRouter();
-  const { handleSubmit, register, setValue, trigger } = useForm({
-    mode: "onChange",
-  });
+  const { handleSubmit, register, setValue, trigger } = useForm();
   const [createBoard] = useMutation(CREATE_BOARD);
 
   const onClickButton = async (data) => {

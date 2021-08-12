@@ -6,7 +6,7 @@ import {
   Contents,
   Contents__Input,
   Explanation,
-  Explanation__Input,
+  ReactQuill__Input,
   Price,
   Price__Input,
   Tag,
@@ -37,12 +37,10 @@ import { IRegistrationUIProps } from "./ProductRegistration.types";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import { useContext } from "react";
 import { BoardsEditPageContext } from "../../../../../pages/boards/[boardId]/edit";
-// import "react-quill/dist/quill.snow.css";
-import dynamic from "next/dynamic";
 
 export default function RegistrationUI(props: IRegistrationUIProps) {
   const { isEdit, data } = useContext(BoardsEditPageContext);
-  // const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
   return (
     <>
       {props.isOpen && (
@@ -57,10 +55,10 @@ export default function RegistrationUI(props: IRegistrationUIProps) {
         <Contents>한줄요약</Contents>
         <Contents__Input placeholder="상품내용을 작성해주세요." />
         <Explanation>상품설명</Explanation>
-        <Explanation__Input placeholder="상품을 설명해주세요." />
+        <ReactQuill__Input placeholder="상품을 설명해주세요." />
+
         <Price>판매가격</Price>
         <Price__Input
-          ReactQuill
           // onChange={onChangeContents}
           placeholder="판매 가격을 입력해주세요."
         />

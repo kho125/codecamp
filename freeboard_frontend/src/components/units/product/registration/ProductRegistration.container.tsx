@@ -11,11 +11,14 @@ export const INPUTS_INIT = {
   contents: "",
 };
 
+// const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
 export default function Registration(props: IRegistrationProps) {
   const [active, setActive] = useState(false);
   const [inputs, setInputs] = useState(INPUTS_INIT);
   const [inputsErrors, setInputsErrors] = useState(INPUTS_INIT);
   const { setValue } = useForm();
+
   const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
   const onChangeContents = (value) => {
     setValue("contents", value);

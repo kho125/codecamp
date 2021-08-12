@@ -1,26 +1,13 @@
 import ProductMainUI from "./ProductMain.presenter";
 import { useQuery } from "@apollo/client";
-import { FETCH_BOARDS, FETCH_BOARDS_COUNT } from "./ProductMain.queries";
+import { FETCH_USED_ITEMS } from "./ProductMain.queries";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import {
-  IQuery,
-  IQueryFetchBoardsArgs,
-  IQueryFetchBoardsCountArgs,
-} from "../../../../commons/types/generated/types";
+import { MouseEvent, useState } from "react";
 
 export default function ProductMain() {
   const router = useRouter();
-  const [startPage, setStartPage] = useState(1);
   const [keyword, setKeyword] = useState("");
-  const { data, refetch } = useQuery<
-    Pick<IQuery, "fetchBoards">,
-    IQueryFetchBoardsArgs
-  >(FETCH_BOARDS, { variables: { page: startPage } });
-  const { data: dataBoardsCount } = useQuery<
-    Pick<IQuery, "fetchBoardsCount">,
-    IQueryFetchBoardsCountArgs
-  >(FETCH_BOARDS_COUNT);
+  const { data, refetch } = useQuery(FETCH_USED_ITEMS);
 
   function onClickMoveToProductNew() {
     router.push("/product/new");
@@ -39,9 +26,9 @@ export default function ProductMain() {
       data={data}
       refetch={refetch}
       keyword={keyword}
-      dataBoardsCount={dataBoardsCount}
-      startPage={startPage}
-      setStartPage={setStartPage}
+      // dataBoardsCount={dataBoardsCount}
+      // startPage={startPage}
+      // setStartPage={setStartPage}
       onClickMoveToProductNew={onClickMoveToProductNew}
       onClickMoveToProductDetail={onClickMoveToProductDetail}
       onChangeKeyword={onChangeKeyword}

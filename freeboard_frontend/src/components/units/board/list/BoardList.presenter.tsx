@@ -108,10 +108,12 @@ export default function BoardListUI(props: IBoardListUIProps) {
           <Data>Date : 2021.02.18</Data>
         </Best__4>
       </Bests>
+
       <Searchbars01
         refetch={props.refetch}
         onChangeKeyword={props.onChangeKeyword}
       />
+
       <TableTop />
       <Row>
         <ColumnHeaderBasic>번호</ColumnHeaderBasic>
