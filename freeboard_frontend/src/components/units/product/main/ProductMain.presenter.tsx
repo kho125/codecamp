@@ -1,4 +1,5 @@
 import {
+  Full,
   Wrapper,
   Main,
   Best__Title,
@@ -16,7 +17,7 @@ import {
   Bar,
   Sale,
   Sale2,
-  Img,
+  Image,
   Product,
   Name,
   Contents,
@@ -32,6 +33,17 @@ import {
   TextToken,
   Button,
   Registration,
+  Aside,
+  Aside__Title,
+  Aside__Box,
+  Aside__Heart,
+  Aside__Heart__Icon,
+  Aside__Heart__Count,
+  Aside__Image,
+  Aside__Name,
+  Aside__Contents,
+  Aside__Price,
+  Aside__Tag
 } from "./ProductMain.styles";
 import { IProductMainUIProps } from "./ProductMain.types";
 import { v4 as uuidv4 } from "uuid";
@@ -39,8 +51,9 @@ import Searchbars02 from "../../../commons/searchbars2/Searchbars02.container";
 
 export default function ProductMainUI(props: IProductMainUIProps) {
   return (
-    <Wrapper>
+    <Full>
       <Main>
+    <Wrapper>
         <Best__Title>베스트 상품</Best__Title>
         <Best__Boxs>
           <Best__Box>
@@ -111,12 +124,10 @@ export default function ProductMainUI(props: IProductMainUIProps) {
             <>
               <Sale>
                 <Sale2>
-                  {/* {props.data?.fetchBoard.images?.map((data: string) => ( */}
-                  <Img
+                  <Image
                     key={data}
-                    src={`https://storage.googleapis.com/${data}`}
+                    src={`https://storage.googleapis.com/${data.images.[0]}`}
                   />
-                  {/* ))} */}
                   <Product>
                     <Name>{data.name}</Name>
                     <Contents>{data.Contents}</Contents>
@@ -142,7 +153,30 @@ export default function ProductMainUI(props: IProductMainUIProps) {
         <Button onClick={props.onClickMoveToProductNew}>
           <Registration>상품 등록하기</Registration>
         </Button>
-      </Main>
+        
     </Wrapper>
+      </Main>
+      <Aside>
+        <Aside__Title>오늘 본 상품</Aside__Title>
+        <Aside__Box>
+          <Aside__Heart>
+            <Aside__Heart__Icon src="/images/boards/detail/heart.png" />
+            <Aside__Heart__Count>20</Aside__Heart__Count>
+          </Aside__Heart>
+          <Aside__Image />
+          <Aside__Name>삼성전자 갤럭시탭A 10.1</Aside__Name>
+          <Aside__Contents>2019 LTE 32GB</Aside__Contents>
+          <Aside__Price>240,120원</Aside__Price>
+          <Aside__Tag>#삼성전자  #갤럭시탭  #갓성비</Aside__Tag>
+
+        </Aside__Box>
+
+        <Aside__Box>
+          
+        </Aside__Box>
+        
+      </Aside>
+      
+    </Full>
   );
 }

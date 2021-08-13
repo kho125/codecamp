@@ -1,17 +1,21 @@
 import styled from "@emotion/styled";
-import { ITextTokenProps } from "./ProductMain.types";
+// import { ITextTokenProps } from "./ProductMain.types";
+
+export const Full = styled.div`
+  display: flex;
+`;
 
 export const Wrapper = styled.div``;
 
 export const Main = styled.div`
   height: 100%;
   border: 1px solid #000;
-  /* margin: 0 200px 300px; */
-  padding: 80px 102px 100px 102px;
+  /* margin: 0 0 300px 300px; */
+  padding: 80px 0 100px 102px;
   display: flex;
   flex-direction: column;
   border: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
 `;
 
 export const Best__Title = styled.div`
@@ -92,83 +96,10 @@ export const Heart__Count = styled.span`
   line-height: 24px;
 `;
 
-// export const Searchs = styled.div`
-//   margin-bottom: 40px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// `;
-
-// export const Search__Left = styled.div`
-//   display: flex;
-// `;
-
-// export const Onsale = styled.div`
-//   margin-right: 20px;
-//   font-size: 18px;
-//   line-height: 27px;
-//   color: #555;
-//   cursor: pointer;
-//   :active {
-//     color: #000;
-//   }
-// `;
-
-// export const Soldout = styled.div`
-//   font-size: 18px;
-//   line-height: 27px;
-//   color: #555;
-//   cursor: pointer;
-//   :active {
-//     color: #000;
-//   }
-// `;
-
-// export const Search__Right = styled.div``;
-
-// export const Search__Input = styled.input`
-//   width: 282px;
-//   height: 52px;
-//   background-color: #f2f2f2;
-//   padding-left: 11.51px;
-//   border: none;
-//   :focus {
-//     outline: 0;
-//   }
-// `;
-
-// export const Date__Input = styled.input`
-//   margin-left: 24px;
-//   padding-left: 10px;
-//   width: 282px;
-//   height: 52px;
-//   border: 1px solid #f2f2f2;
-//   border-radius: 10px;
-//   :focus {
-//     outline: 0;
-//   }
-// `;
-
-// export const Search__Button = styled.button`
-//   margin-left: 24px;
-//   width: 78px;
-//   height: 52px;
-//   color: #fff;
-//   background-color: #000;
-//   border: none;
-//   transition: 0.3s;
-
-//   :hover {
-//     transition: 0.3s;
-//     background-color: #444;
-//   }
-// `;
-
 export const Products = styled.div`
-  /* display: flex;
-  flex-direction: column; */
-  overflow: scroll;
+  height: 1004px;
   overflow: auto;
+  scrollbar-color: #000;
 `;
 
 export const Bar = styled.div`
@@ -184,7 +115,7 @@ export const Sale2 = styled.div`
   display: flex;
 `;
 
-export const Img = styled.img`
+export const Image = styled.img`
   margin: 20px 40px 20px 0;
   width: 160px;
   height: 160px;
@@ -285,9 +216,76 @@ export const Registration = styled.button`
   }
 `;
 
-export const Llrr = styled.span`
+export const Aside = styled.div`
+  width: 196px;
+  height: 505px;
+  border: 1px solid #bdbdbd;
+  padding: 20px;
+`;
+
+export const Aside__Title = styled.div`
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+`;
+
+export const Aside__Box = styled.div`
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 156px;
+  height: 199px;
+  border: 1px solid #bdbdbd;
+`;
+
+export const Aside__Heart = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+`;
+
+export const Aside__Heart__Icon = styled.img`
+  width: 20px;
+  height: 18.35px;
+  margin-right: 5.5px;
+  margin-bottom: 4.65px;
+`;
+
+export const Aside__Heart__Count = styled.span`
+  font-size: 16px;
+  line-height: 24px;
+`;
+
+export const Aside__Image = styled.img`
+  width: 60px;
+  height: 60px;
+  margin: 3.99px 36px 12px;
+  background-color: #06f;
+`;
+
+export const Aside__Name = styled.div`
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+`;
+
+export const Aside__Contents = styled.div`
+  font-size: 12px;
+  line-height: 18px;
+  color: #4f4f4f;
+`;
+
+export const Aside__Price = styled.div`
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+`;
+
+export const Aside__Tag = styled.div`
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  color: #bdbdbd;
 `;
 
 // export const TextToken = styled.span`

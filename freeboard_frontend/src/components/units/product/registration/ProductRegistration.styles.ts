@@ -71,7 +71,6 @@ export const Explanation = styled.div`
 
 // ReactQuill을 사용했으니 이름을 정하고 스타일에 (가로안에 넣기)
 export const ReactQuill__Input = styled(ReactQuill)`
-  /* background-color: #06f; */
   height: 100%;
   margin-bottom: 85px;
 `;
