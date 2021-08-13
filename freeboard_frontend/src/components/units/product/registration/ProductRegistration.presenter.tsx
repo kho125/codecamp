@@ -51,7 +51,13 @@ export default function RegistrationUI(props: IRegistrationUIProps) {
       <Wrapper>
         <Registration>상품 등록하기</Registration>
         <Product>상품명</Product>
-        <Product__Input placeholder="상품명을 작성해주세요." />
+        <Product__Input
+          name="Product"
+          type="text"
+          placeholder="상품명을 작성해주세요."
+          // defaultValue={data?.fetchBoard.Product || ""}
+          onChange={props.onChangeInputs}
+        />
         <Contents>한줄요약</Contents>
         <Contents__Input placeholder="상품내용을 작성해주세요." />
         <Explanation>상품설명</Explanation>

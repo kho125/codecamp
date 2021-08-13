@@ -5,9 +5,9 @@ import { IRegistrationProps } from "./ProductRegistration.types";
 // import "react-quill/dist/quill.snow.css";
 
 export const INPUTS_INIT = {
-  writer: "",
-  password: "",
-  title: "",
+  product: "",
+  price: "",
+  tags: "",
   contents: "",
 };
 
@@ -18,6 +18,19 @@ export default function Registration(props: IRegistrationProps) {
   const [inputs, setInputs] = useState(INPUTS_INIT);
   const [inputsErrors, setInputsErrors] = useState(INPUTS_INIT);
   const { setValue } = useForm();
+
+  function onChangeAddressDetail(event: ChangeEvent<HTMLInputElement>) {
+    setAddressDetail(event.target.value);
+  }
+
+  function onChangeInputs(
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    const newInputs = { ...inputs, [event.target.name]: event.target.value };
+    setInputs(newInputs);
+    setActive(Object.values(newInputs).every((data) => data));
+    setInputsErrors({ ...inputsErrors, [event.target.name]: "" });
+  }
 
   const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
   const onChangeContents = (value) => {
