@@ -49,8 +49,14 @@ export default function Login() {
           password: inputs.password,
         },
       });
-      setAccessToken(result.data?.loginUser.accessToken);
-      console.log(result.data?.loginUser.accessToken);
+
+      setAccessToken(result.data?.loginUser.accessToken || "");
+      localStorage.setItem(
+        "accessToken",
+        result.data?.loginUser.accessToken || ""
+      );
+
+      // console.log(result.data?.loginUser.accessToken);
       alert("로그인성공");
       router.push("/product/main");
     } catch (error) {

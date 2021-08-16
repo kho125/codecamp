@@ -30,16 +30,17 @@ import {
   RadioLabel,
   ButtonWrapper,
   SubmitButton,
+  Error,
 } from "./ProductRegistration.styles";
-import Modal from "antd/lib/modal/Modal";
+import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
-import { IRegistrationUIProps } from "./ProductRegistration.types";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
+import { IRegistrationUIProps } from "./ProductRegistration.types";
 import { useContext } from "react";
-import { BoardsEditPageContext } from "../../../../../pages/boards/[boardId]/edit";
+import { ProductEditPageContext } from "../../../../../pages/product-registration/[productId]/edit";
 
 export default function RegistrationUI(props: IRegistrationUIProps) {
-  const { isEdit, data } = useContext(BoardsEditPageContext);
+  const { isEdit, data } = useContext(ProductEditPageContext);
 
   return (
     <>
@@ -49,27 +50,60 @@ export default function RegistrationUI(props: IRegistrationUIProps) {
         </Modal>
       )}
       <Wrapper>
-        <Registration>상품 등록하기</Registration>
+        <Registration>
+          {/* {isEdit ? "상품 등록하기" : "상품 수정하기"} */}
+          상품 등록하기
+        </Registration>
+
         <Product>상품명</Product>
         <Product__Input
-          name="Product"
+          name="name"
           type="text"
           placeholder="상품명을 작성해주세요."
-          // defaultValue={data?.fetchBoard.Product || ""}
+          defaultValue={data?.fetchUseditems.product || ""}
           onChange={props.onChangeInputs}
         />
+        <Error>{props.inputsErrors.product}</Error>
+
         <Contents>한줄요약</Contents>
-        <Contents__Input placeholder="상품내용을 작성해주세요." />
+        <Contents__Input
+          name="remarks"
+          type="text"
+          placeholder="상품내용을 작성해주세요."
+          defaultValue={data?.fetchUseditems.remarks || ""}
+          onChange={props.onChangeInputs}
+        />
+        <Error>{props.inputsErrors.remarks}</Error>
+
         <Explanation>상품설명</Explanation>
-        <ReactQuill__Input placeholder="상품을 설명해주세요." />
+        <ReactQuill__Input
+          name="contents"
+          type="text"
+          placeholder="상품내용을 작성해주세요."
+          defaultValue={data?.fetchUseditems.contents || ""}
+          onChange={props.onChangeContents}
+        />
+        <Error>{props.inputsErrors.contents}</Error>
 
         <Price>판매가격</Price>
         <Price__Input
-          // onChange={onChangeContents}
-          placeholder="판매 가격을 입력해주세요."
+          name="price"
+          type="text"
+          placeholder="가격을 작성해주세요."
+          defaultValue={data?.fetchUseditems.price || ""}
+          onChange={props.onChangeInputs}
         />
+        <Error>{props.inputsErrors.price}</Error>
+
         <Tag>태그입력</Tag>
-        <Tag__Input placeholder="#태그 #태그 #태그" />
+        <Tag__Input
+          name="tags"
+          type="text"
+          placeholder="태그를 작성해주세요."
+          defaultValue={data?.fetchUseditems.tags || ""}
+          onChange={props.onChangeInputs}
+        />
+        <Error>{props.inputsErrors.tags}</Error>
 
         <Location>
           <Location__Left>
@@ -100,21 +134,20 @@ export default function RegistrationUI(props: IRegistrationUIProps) {
             />
           ))}
         </ImageWrapper>
-
         <OptionWrapper>
           <Label>메인 사진 설정</Label>
           <RadioButton type="radio" id="image" name="radio-button" />
-          <RadioLabel htmlFor="youtube">사진 1</RadioLabel>
+          <RadioLabel htmlFor="image">사진 1</RadioLabel>
           <RadioButton type="radio" id="image" name="radio-button" />
           <RadioLabel htmlFor="image">사진 2</RadioLabel>
         </OptionWrapper>
-
         <ButtonWrapper>
           <SubmitButton
             onClick={isEdit ? props.onClickUpdate : props.onClickSubmit}
             active={props.active}
           >
-            {isEdit ? "등록하기" : "등록하기"}
+            {/* {isEdit ? "등록하기" : "등록하기"} */}
+            등록하기
           </SubmitButton>
         </ButtonWrapper>
       </Wrapper>
