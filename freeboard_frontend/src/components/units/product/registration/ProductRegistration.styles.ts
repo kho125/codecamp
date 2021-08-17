@@ -5,9 +5,10 @@ import dynamic from "next/dynamic";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export const Wrapper = styled.div`
-  height: 1847px;
+  /* height: 1847px; */
   border: 1px solid #000;
-  margin: 80px 360px 301px;
+  /* margin: 80px 360px 301px; */
+  margin: 80px 120px 301px;
   padding: 80px 102px 100px 102px;
   display: flex;
   flex-direction: column;
@@ -32,7 +33,7 @@ export const Product = styled.div`
 `;
 
 export const Product__Input = styled.input`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 14px 0 14px 16px;
   border: 1px solid #bdbdbd;
   transition: 0.5s;
@@ -51,7 +52,7 @@ export const Contents = styled.div`
 `;
 
 export const Contents__Input = styled.input`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 14px 0 14px 16px;
   border: 1px solid #bdbdbd;
   transition: 0.5s;
@@ -71,7 +72,7 @@ export const Explanation = styled.div`
 
 // ReactQuill을 사용했으니 이름을 정하고 스타일에 (가로안에 넣기)
 export const ReactQuill__Input = styled(ReactQuill)`
-  height: 100%;
+  height: 300px;
   margin-bottom: 85px;
 `;
 
@@ -83,7 +84,7 @@ export const Price = styled.div`
 `;
 
 export const Price__Input = styled.input`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 14px 0 14px 16px;
   border: 1px solid #bdbdbd;
   transition: 0.5s;
@@ -102,7 +103,7 @@ export const Tag = styled.div`
 `;
 
 export const Tag__Input = styled.input`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 14px 0 14px 16px;
   border: 1px solid #bdbdbd;
   transition: 0.5s;
@@ -253,4 +254,9 @@ export const SubmitButton = styled.button`
   margin-left: 12px;
   margin-right: 12px;
   cursor: pointer;
+`;
+
+export const Error = styled.div`
+  font-size: 14px;
+  color: red;
 `;

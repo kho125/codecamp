@@ -8,8 +8,8 @@ import { GlobalContext } from "../_app";
 import { useRouter } from "next/router";
 
 const LOGIN_USER = gql`
-  mutation loginUser($email: String!, $password: String!) {
-    loginUser(email: $email, password: $password) {
+  mutation loginUserExample($email: String!, $password: String!) {
+    loginUserExample(email: $email, password: $password) {
       accessToken
     }
   }
@@ -42,13 +42,16 @@ export default function SignupPage() {
           password: password,
         },
       });
-      setAccessToken(result.data?.loginUser.accessToken || ""); // || "" -> 레드줄 없어짐
+
+      setAccessToken(result.data?.loginUser.accessToken || "");
+      localStorage.setItem("refreshToken", "true");
+      // setAccessToken(result.data?.loginUser.accessToken || ""); // || "" -> 레드줄 없어짐
       localStorage.setItem(
         "accessToken",
         result.data?.loginUser.accessToken || ""
       );
-      // router.push("/22-login-success");
-      router.push("/23-hoc");
+      router.push("/22-login-success");
+      // router.push("/23-hoc");
     } catch (error) {
       alert(error.message);
     }

@@ -46,7 +46,7 @@ export const Email__Input = styled.input`
   width: 384px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   box-sizing: border-box;
   border-radius: 16px;
   padding: 20px 0 20px 16px;
@@ -66,7 +66,7 @@ export const Password__Input = styled.input`
   margin-bottom: 10px;
   height: 64px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   box-sizing: border-box;
   border-radius: 16px;
   padding: 20px 0 20px 16px;
