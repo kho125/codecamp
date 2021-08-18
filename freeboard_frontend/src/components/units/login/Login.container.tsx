@@ -24,6 +24,7 @@ export default function Login() {
       [event.target.name]: event.target.value,
     };
     setInputs(newInputs);
+
     if (newInputs.email !== "" && newInputs.password !== "") {
       setActive(true);
     } else {
