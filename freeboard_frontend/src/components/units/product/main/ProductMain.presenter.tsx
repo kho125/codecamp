@@ -1,107 +1,3 @@
-// import BuildManifestPlugin from "next/dist/build/webpack/plugins/build-manifest-plugin";
-// import LayoutNavigation from "../../../commons/banner/LayoutBanner.container";
-
-// import {
-//   WrapperAll,
-//   Wrapper,
-//   WrapperRight,
-//   HeadWrapper,
-//   Head,
-//   BannerWrapper,
-//   TradingItemWrapper,
-//   TradingMenu,
-//   SearchWrapper,
-//   MenuWrapper,
-//   ItemWrapper,
-//   ItemLeftWrapper,
-//   ItemRightWrapper,
-//   Price,
-//   Picture,
-//   ItemInfoWrapper,
-//   Name,
-//   Remarks,
-//   Tag,
-//   SellerHeartWrapper,
-//   SellerWrapper,
-//   Avatar,
-//   Seller,
-//   HeartWrapper,
-//   Heart,
-//   HeartNumber,
-// } from "./ProductList.styles";
-
-// export default function MarketListUI(props) {
-//   return (
-//     <WrapperAll>
-//       <Wrapper>
-//         <HeadWrapper>
-//           <Head>베스트 상품</Head>
-//         </HeadWrapper>
-//         <BannerWrapper>
-//           <LayoutNavigation best={props.best} />
-//         </BannerWrapper>
-//         <MenuWrapper>
-//           <TradingItemWrapper>
-//             <TradingMenu>판매중 상품</TradingMenu>
-//             <TradingMenu>판매된 상품</TradingMenu>
-//           </TradingItemWrapper>
-//           <SearchWrapper>도와주십시오</SearchWrapper>
-//         </MenuWrapper>
-
-
-//         {props.item?.fetchUseditems.map((data) => (
-//           <ItemWrapper key={data._id}>
-//             <ItemLeftWrapper>
-//               <Picture
-//                 src={`https://storage.googleapis.com/${data.images[0]}`}
-//                 onClick={props.detail}
-//                 id={data._id}
-//               />
-//               <ItemInfoWrapper>
-//                 <Name>{data.name}</Name>
-//                 <Remarks>{data.remarks}</Remarks>
-//                 <Tag>{data.tag}</Tag>
-
-//                 <SellerHeartWrapper>
-//                   <SellerWrapper>
-//                     <Avatar></Avatar>
-//                     <Seller>{data.seller.name}</Seller>
-//                   </SellerWrapper>
-//                   <HeartWrapper>
-//                     <Heart onClick={props.toggle} id={data._id}></Heart>
-//                     <HeartNumber>{data.pickedCount}</HeartNumber>
-//                   </HeartWrapper>
-//                 </SellerHeartWrapper>
-//               </ItemInfoWrapper>
-//             </ItemLeftWrapper>
-
-//             <ItemRightWrapper>
-//               <button onClick={props.onClickBasket(data)} id={data._id}>
-//                 상품 상세보기
-//               </button>
-//               <Price>{data.price}원</Price>
-//               <Price>{data.buyer?.name}</Price>
-//             </ItemRightWrapper>
-//           </ItemWrapper>
-//         ))}
-//       </Wrapper>
-//       <WrapperRight>
-//         <div>오늘본 상품</div>
-//         {props.baskets.map((data) => (
-//           <div key={data._id}>
-//             <span>{data.name}</span>
-//             <span>{data.remarks}</span>
-//           </div>
-//         ))}
-//       </WrapperRight>
-//     </WrapperAll>
-//   );
-// }
-
-
-
-
-
 import {
   Full,
   Wrapper,
@@ -230,21 +126,21 @@ export default function ProductMainUI(props: IProductMainUIProps) {
 
         <Products>
           <Bar></Bar>
-          {/* {props.data?.fetchUseditems.map((data) => ( */}
             {props.item?.fetchUseditems.map((data) => (
             <>
               <Sale key={data._id}>
                 <Sale2>
                   <Image
                     key={data._id}
+                    id={data._id}
                     src={`https://storage.googleapis.com/${data.images.[0]}`}
-                    onClick={props.detail}
+                    onClick={props.onClickMoveToProductDetail}
                   />
                   <Product>
-                    <Name>{data.name}</Name>
-                    <Remarks>{data.remarks}</Remarks>
-                    <Contents>{data.Contents}</Contents>
-                    <Tag>{data.tags}</Tag>
+                    <Name id={data._id} onClick={props.onClickMoveToProductDetail}>{data.name}</Name>
+                    <Remarks id={data._id} onClick={props.onClickMoveToProductDetail}>{data.remarks}</Remarks>
+                    <Contents id={data._id} onClick={props.onClickMoveToProductDetail}>{data.contents}</Contents>
+                    <Tag id={data._id} onClick={props.onClickMoveToProductDetail}>{data.tags}</Tag>
                     <User>
                       <User__Img src="/images/boards/best/user.png" />
                       <User__Name>{data.seller.name}</User__Name>
@@ -275,25 +171,25 @@ export default function ProductMainUI(props: IProductMainUIProps) {
       <Aside>
         <Aside__Title>오늘 본 상품</Aside__Title>
         <Aside__Box>
-          <Aside__Heart>
+          {/* <Aside__Heart>
             <Aside__Heart__Icon src="/images/boards/detail/heart.png" />
-            <Aside__Heart__Count>20</Aside__Heart__Count>
+            <Aside__Heart__Count>{data.pickedCount}</Aside__Heart__Count>
           </Aside__Heart>
-          <Aside__Image />
-          <Aside__Name>삼성전자 갤럭시탭A 10.1</Aside__Name>
-          <Aside__Contents>2019 LTE 32GB</Aside__Contents>
-          <Aside__Price>240,120원</Aside__Price>
-          <Aside__Tag>#삼성전자  #갤럭시탭  #갓성비</Aside__Tag>
+          <Aside__Image {data.images.[0]}/>
+          <Aside__Name>{data.name}</Aside__Name>
+          <Aside__Contents>{data.contents}</Aside__Contents>
+          <Aside__Price>{data.price}</Aside__Price>
+          <Aside__Tag>{data.tags}</Aside__Tag> */}
         </Aside__Box>
 
 
         <Aside__Box>
-                  {props.baskets.map((data) => (
+        {/* {props.baskets.map((data) => (
         <div key={data._id}>
           <span>{data.name}</span>
           <span>{data.remarks}</span>
         </div>
-      ))}
+      ))} */}
         </Aside__Box>
         
       </Aside>
