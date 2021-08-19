@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
-
 import { useEffect } from "react";
 
 declare const window: typeof globalThis & {
@@ -10,7 +8,6 @@ declare const window: typeof globalThis & {
 export default function KakaomapWrite(props) {
   useEffect(() => {
     const script = document.createElement("script");
-
     script.src =
       "//dapi.kakao.com/v2/maps/sdk.js?appkey=75ce13618a2a3161330793fa9b482a47&autoload=false";
     document.head.appendChild(script);

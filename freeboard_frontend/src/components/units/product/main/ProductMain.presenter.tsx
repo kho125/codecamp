@@ -32,7 +32,7 @@ import {
   Price,
   Price__Img,
   Money,
-  TextToken,
+  // TextToken,
   Button,
   Registration,
   Aside,

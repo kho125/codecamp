@@ -6,8 +6,11 @@ import {
   AvatarRight,
   Info,
   Seller,
-  Buyer,
+  // Buyer,
   Date,
+  // LinkIcon,
+  // LocationIcon,
+  Banner,
   Hr,
   NameRemarksWrapper,
   Remarks,
@@ -29,12 +32,24 @@ import {
 import DOMPurify from "dompurify";
 import Button01 from "../../../commons/buttons/Button01";
 import KakaomapDetail from "../../../commons/kakaomapDetail";
+import { Tooltip } from "antd";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export default function ProductDetailUI(props) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
     <Wrapper>
       <AvatarWrapper>
         <AvatarLeft>
-          <Avatar src="/boardpage/avatar.png" />
+          <Avatar src="/images/avatar.png" />
           <Info>
             <Seller>
               {props.data ? props.data.fetchUseditem.seller.name : "111"}
@@ -53,6 +68,13 @@ export default function ProductDetailUI(props) {
                 : "244"
               : "343"}
           </Buyer> */}
+          {/* <LinkIcon src="/images/boards/detail/link.png" /> */}
+          {/* <Tooltip
+            placement="topRight"
+            title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
+          >
+            <LocationIcon src="/images/boards/detail/location.png" />
+          </Tooltip> */}
         </AvatarRight>
       </AvatarWrapper>
 
@@ -62,9 +84,25 @@ export default function ProductDetailUI(props) {
           <Remarks>{props.data?.fetchUseditem.remarks}</Remarks>
           <Name>{props.data?.fetchUseditem.name}</Name>
         </NameRemarksWrapper>
-        <Price>{props.data?.fetchUseditem.price}</Price>
+        <Price>{props.data?.fetchUseditem.price}원</Price>
       </NameRemarksPriceWrapper>
 
+      <Banner>
+        <Slider {...settings}>
+          <MainPicture
+            src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images?.[0]}`}
+          />
+          <PictureWrapper>
+            {props.data?.fetchUseditem.images?.map((data: string) => (
+              <Picture
+                key={data}
+                src={`https://storage.googleapis.com/${data}`}
+              />
+            ))}
+          </PictureWrapper>
+        </Slider>
+      </Banner>
+      {/* 
       <PictureAllWrapper>
         <MainPicture
           src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images?.[0]}`}
@@ -77,7 +115,7 @@ export default function ProductDetailUI(props) {
             />
           ))}
         </PictureWrapper>
-      </PictureAllWrapper>
+      </PictureAllWrapper> */}
 
       {typeof window !== "undefined" && (
         <Contents
@@ -88,7 +126,7 @@ export default function ProductDetailUI(props) {
       )}
 
       <TagsWrapper>
-        <Tags>태그들</Tags>
+        <Tags>{props.data?.fetchUseditem.tags}</Tags>
       </TagsWrapper>
 
       <Hr></Hr>

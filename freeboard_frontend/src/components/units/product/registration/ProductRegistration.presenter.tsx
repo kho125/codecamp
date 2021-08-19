@@ -171,7 +171,6 @@ import {
   TextInputWrapper,
   NameWrapper,
   Name,
-  NameRed,
   Input,
   TextAreaInputWrapper,
   Img,
@@ -185,11 +184,12 @@ import {
   GPSAddressWrapper,
   MapGPSAddressWrapper,
   PictureWrapper,
+  Image,
   SubmitButton,
   ButtonWrapper,
   Logo,
   LogoWrapper,
-} from "./ProductRegistration.styles"; //Home.styles 를 가져와랴
+} from "./ProductRegistration.styles";
 import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
 import Inputmain from "../../../commons/inputs/Inputmain";
@@ -252,8 +252,7 @@ export default function ProductWriteUI(props: any) {
 
         <TextInputWrapper>
           <NameWrapper>
-            <Name>태그입력</Name>
-            <NameRed>태그입력은 해야하나요</NameRed>
+            <Name>태그</Name>
           </NameWrapper>
 
           <Input></Input>
@@ -271,7 +270,7 @@ export default function ProductWriteUI(props: any) {
               <LatLngWrapper>
                 <InputGPS placeholder="경도LNG" value={props.latLag.lat} />
                 <LogoWrapper>
-                  <Logo></Logo>
+                  <Logo src="/images/boards/detail/location.png" />
                 </LogoWrapper>
 
                 <InputGPS placeholder="위도LAT" value={props.latLag.lag} />
@@ -297,20 +296,22 @@ export default function ProductWriteUI(props: any) {
 
         <PictureWrapper>
           <Name>사진첨부</Name>
-          {new Array(3).fill(1).map((data, index) => (
-            <Uploads01
-              key={`${data}_${index}`}
-              index={index}
-              onChangeFiles={props.onChangeFiles}
-            />
-          ))}
+          <Image>
+            {new Array(2).fill(1).map((data, index) => (
+              <Uploads01
+                key={`${data}_${index}`}
+                index={index}
+                onChangeFiles={props.onChangeFiles}
+              />
+            ))}
+          </Image>
         </PictureWrapper>
 
         <Name>메인사진설정</Name>
-        <RadioButton type="radio" id="youtube" name="radio-button" />
-        <RadioLabel htmlFor="youtube">유튜브</RadioLabel>
         <RadioButton type="radio" id="image" name="radio-button" />
-        <RadioLabel htmlFor="image">사진</RadioLabel>
+        <RadioLabel htmlFor="image">사진1</RadioLabel>
+        <RadioButton type="radio" id="image" name="radio-button" />
+        <RadioLabel htmlFor="image">사진2</RadioLabel>
         <ButtonWrapper>
           <Button01
             buttonName="상품 등록"
