@@ -16,12 +16,6 @@ export default function ProductMain() {
   const { data: best } = useQuery(FETCH_USED_ITEM_OF_THE_BEST);
   const [toggleitem] = useMutation(TOGGLE_USED_ITEM_PICK);
   const [baskets, setBaskets] = useState([]);
-  // useEffect(() => {
-  //   if (!accessToken) {
-  //     alert("로그인 해주세요!");
-  //     router.push("/market/login");
-  //   }
-  // }, []);
   console.log(data);
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("baskets") || "[]");
@@ -78,7 +72,7 @@ export default function ProductMain() {
   }
 
   function onClickMoveToProductDetail(event: MouseEvent<HTMLDivElement>) {
-    router.push(`/product/${(event.target as Element).id}`);
+    router.push(`/product/detail/${(event.target as Element).id}`);
   }
 
   function onChangeKeyword(value: string) {

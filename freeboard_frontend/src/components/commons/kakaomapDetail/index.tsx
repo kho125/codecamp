@@ -70,7 +70,7 @@ export default function KakaomapDetail(props) {
           src="//dapi.kakao.com/v2/maps/sdk.js?appkey=75ce13618a2a3161330793fa9b482a47"
         ></script>
       </Head>
-      <div id="map" style={{ width: "1200px", height: "800px" }}></div>
+      <div id="map" style={{ width: "500px", height: "400px" }}></div>
     </>
   );
 }

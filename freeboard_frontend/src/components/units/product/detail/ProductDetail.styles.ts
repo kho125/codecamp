@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 1200px;
-  /* height: 1902px; */
-  // margin은 나중에 설정할듯,
   margin-top: 100px;
   margin-left: 100px;
   padding-top: 82px;
@@ -12,11 +10,12 @@ export const Wrapper = styled.div`
   border: 1px solid;
   box-shadow: 2px 4px 13px rgba(0, 0, 0, 0.7);
 `;
+
 export const AvatarWrapper = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 `;
+
 export const NameRemarksWrapper = styled.div`
   height: 67px;
   display: flex;
@@ -34,15 +33,16 @@ export const NameRemarksPriceWrapper = styled.div`
 
 export const Avatar = styled.img`
   margin-right: 10px;
+  width: 48px;
+  height: 48px;
 `;
 
 export const AvatarLeft = styled.div`
   display: flex;
-  flex-direction: row;
 `;
+
 export const AvatarRight = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 
 export const Info = styled.div`
@@ -50,6 +50,7 @@ export const Info = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
+
 export const Date = styled.div`
   height: 24px;
   font-family: Noto Sans CJK KR;
@@ -60,87 +61,111 @@ export const Date = styled.div`
   color: #828282;
 `;
 
+// export const LinkIcon = styled.img`
+//   margin-right: 15px;
+// `;
+
+// export const LocationIcon = styled.img``;
+
 export const Hr = styled.hr``;
+
 export const Remarks = styled.div`
   height: 27px;
   font-size: 16px;
-
   color: grey;
 `;
 
 export const Name = styled.div`
-  height: 36px;
+  margin-top: 4px;
+  font-weight: bold;
   font-size: 24px;
-
-  color: blue;
+  line-height: 36px;
+  color: #4f4f4f;
 `;
 
 export const Price = styled.div`
-  height: 53px;
+  margin-top: 8px;
+  font-weight: bold;
   font-size: 36px;
-
-  color: red;
+  line-height: 53px;
 `;
 
 export const Contents = styled.div`
-  width: 792px;
-  margin-top: 80px;
+  margin-top: 200px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #4f4f4f;
 `;
+
 export const Seller = styled.div`
   height: 36px;
   //margin-top: 80px;
   font-weight: 500;
   font-size: 24px;
 `;
+
 // export const Buyer = styled.div`
 //   height: 36px;
 //   font-weight: 500;
 //   font-size: 24px;
 // `;
+
 export const MainPicture = styled.img`
   width: 384px;
   height: 384px;
-  background-color: black;
 `;
+
+export const Banner = styled.div`
+  width: 384px;
+  height: 384px;
+  padding: 44px;
+  margin-top: 80px;
+  margin-left: 300px;
+`;
+
+export const Slider = styled.div``;
+
 export const Picture = styled.img`
   width: 78px;
   height: 78px;
   margin-left: 12px;
   margin-right: 12px;
-  background-color: green;
 `;
 
 export const PictureWrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
 `;
-export const PictureAllWrapper = styled.div`
-  width: 100%;
-  height: 482px;
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
+
+// export const PictureAllWrapper = styled.div`
+//   width: 100%;
+//   height: 482px;
+//   margin-top: 80px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   align-items: center;
+// `;
 
 export const TagsWrapper = styled.div`
   height: 24px;
   margin-top: 40px;
   margin-bottom: 40px;
 `;
+
 export const Tags = styled.div`
   font-size: 16px;
   color: grey;
 `;
+
 export const MapWrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
 `;
+
 export const Map = styled.div`
   width: 792px;
   height: 360px;
@@ -153,7 +178,6 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   margin-bottom: 50px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
 `;
 

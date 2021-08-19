@@ -263,14 +263,8 @@
 
 import styled from "@emotion/styled";
 
-// styled 나오면 그냥 css 구나 생각하면 됨
-
-// 왠만하면 태그는 의미가 있는 태그로 이름을 지을 것
-
 export const Wrapper = styled.div`
   width: 1200px;
-  /* height: 1847px; */
-  // margin은 나중에 설정할듯,
   margin-top: 100px;
   margin-left: 100px;
   padding-left: 101px;
@@ -335,12 +329,16 @@ export const MapGPSAddressWrapper = styled.div`
 `;
 
 export const PictureWrapper = styled.div`
-  height: 240px;
-  margin-bottom: 40px;
+  margin: 80px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
+
+export const Image = styled.div`
+  display: flex;
+`;
+
 export const Title = styled.h1``;
 
 export const TextInputWrapper = styled.div`
@@ -375,8 +373,6 @@ export const LogoWrapper = styled.div`
 export const Logo = styled.div`
   width: 14px;
   height: 20px;
-
-  background-image: url("/marketpage/YellowLogo.png");
 `;
 export const NameWrapper = styled.div`
   display: flex;
@@ -417,7 +413,6 @@ export const Box = styled.div`
   width: 180px;
   height: 180px;
   margin-bottom: 40px;
-
   background-color: gray;
 `;
 

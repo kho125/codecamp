@@ -10,7 +10,7 @@ export default function ProductDetail() {
   );
   const { data } = useQuery(FETCH_USED_ITEM, {
     variables: {
-      useditemId: router.query.bbb,
+      useditemId: router.query.useditemId,
     },
   });
 
@@ -18,11 +18,15 @@ export default function ProductDetail() {
     router.push("/product/main");
   };
 
+  function onClickMoveToEdit() {
+    router.push(`/product/detail/${router.query.useditemId}/edit`);
+  }
+
   const purchase = async () => {
     try {
       await createpointtransactionofbuyingandselling({
         variables: {
-          useritemId: router.query.bbb,
+          useritemId: router.query.useditemId,
         },
       });
       alert("정말 잘사셨어요");
@@ -32,9 +36,14 @@ export default function ProductDetail() {
   };
 
   if (typeof window === "undefined") return <></>;
-  console.log(router.query.bbb);
+  console.log(router.query.useditemId);
   console.log(data);
   return (
-    <ProductDetailUI data={data} gotoMain={gotoMain} purchase={purchase} />
+    <ProductDetailUI
+      data={data}
+      gotoMain={gotoMain}
+      onClickMoveToEdit={onClickMoveToEdit}
+      purchase={purchase}
+    />
   );
 }
