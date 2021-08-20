@@ -4,7 +4,7 @@ import {
   ApolloProvider,
   ApolloLink,
 } from "@apollo/client";
-import {onError} from '@apollo/client/link/error'
+import { onError } from "@apollo/client/link/error";
 import { AppProps } from "next/dist/next-server/lib/router/router";
 import "../styles/globals.css";
 import "antd/dist/antd.css";
@@ -15,9 +15,20 @@ import { createUploadLink } from "apollo-upload-client";
 
 import firebase from "firebase/app";
 import "firebase/firestore";
-import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 // import Head from "next/head";
-import { GraphQLClient} from 'graphql-request'
+import { GraphQLClient } from "graphql-request";
+
+import * as Sentry from "@sentry/nextjs";
+Sentry.init({
+  dsn: "https://b1d6a3332287481695dd609be8a5bf3e@o965496.ingest.sentry.io/5916344",
+});
 
 if (typeof window !== "undefined") {
   firebase.initializeApp({
@@ -46,40 +57,40 @@ function MyApp({ Component, pageProps }: AppProps) {
     setUserInfo: setUserInfo,
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("refreshToken")) getAccessToken(setAccessToken);
-  }, [])
+  // useEffect(() => {
+  //   if (localStorage.getItem("refreshToken")) getAccessToken(setAccessToken);
+  // }, [])
 
-
-  const errorLink = onError(({graphQLErrors, operation, forward})) => {
-    if(graphQLErrors) {
-      for(const err of graphQLErrors) {
-        if(err.extensions?.code === "UNAUTHENTICATED") {
-          // 2. 발급 받은 accessToken으로 방금 실패했던 쿼리 재실행하기
-          operation.setContext({
-            headers: {
-              ...operation.getContext().headers,
-              authorization: `Bearer ${getAccessToken(setAccessToken)}`,
-            },
-          });
-          return forward(operation);
-        }
-      }
-    }
-  }
+  // const errorLink = onError(({graphQLErrors, operation, forward})) => {
+  //   if(graphQLErrors) {
+  //     for(const err of graphQLErrors) {
+  //       if(err.extensions?.code === "UNAUTHENTICATED") {
+  //         // 2. 발급 받은 accessToken으로 방금 실패했던 쿼리 재실행하기
+  //         operation.setContext({
+  //           headers: {
+  //             ...operation.getContext().headers,
+  //             authorization: `Bearer ${getAccessToken(setAccessToken)}`,
+  //           },
+  //         });
+  //         return forward(operation);
+  //       }
+  //     }
+  //   }
+  // }
 
   const uploadLink = createUploadLink({
     uri: "https://backend02.codebootcamp.co.kr/graphql",
     headers: {
-      authorization: `Bearer ${accessToken || null}`,
+      authorization: `Bearer ${accessToken}`,
     },
     credentials: "include", // 적어야 쿠키를 받을 수 있음
   });
 
   const client = new ApolloClient({
-    uri: "http://backend02.codebootcamp.co.kr/graphql",
-    link: ApolloLink.from([errorLink, uploadLink as unknown as ApolloLink]),
+    // uri: "http://backend02.codebootcamp.co.kr/graphql",
+    link: ApolloLink.from([uploadLink as unknown as ApolloLink]),
     cache: new InMemoryCache(),
+    connectToDevTools: true, // Apollo Client Devtools를 사용하기 위해 작성
   });
 
   return (
@@ -92,12 +103,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           ></script>
         </Head> */}
         <Layout>
-          <Global styles={globalStyles} />
+          {/* <Global styles={globalStyles} /> */}
           <Component {...pageProps} />
         </Layout>
       </ApolloProvider>
     </GlobalContext.Provider>
   );
-      
+}
 
 export default MyApp;

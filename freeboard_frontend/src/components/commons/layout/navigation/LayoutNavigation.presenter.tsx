@@ -25,7 +25,7 @@ export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
           중고마켓
         </Market>
         <Bar>ㅣ</Bar>
-        <MyPage id="/mypages" onClick={props.onClickMenu}>
+        <MyPage id="/mypage" onClick={props.onClickMenu}>
           마이페이지
         </MyPage>
       </Menu>

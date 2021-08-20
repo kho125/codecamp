@@ -8,8 +8,8 @@ import {
   Seller,
   // Buyer,
   Date,
-  // LinkIcon,
-  // LocationIcon,
+  LinkIcon,
+  LocationIcon,
   Banner,
   Hr,
   NameRemarksWrapper,
@@ -17,10 +17,13 @@ import {
   Name,
   Price,
   Contents,
-  NameRemarksPriceWrapper,
+  HeartIcon,
+  HeartCount,
+  HeartRitgh,
+  // NameRemarksPriceWrapper,
   MainPicture,
   Picture,
-  PictureAllWrapper,
+  // PictureAllWrapper,
   PictureWrapper,
   TagsWrapper,
   Tags,
@@ -68,24 +71,32 @@ export default function ProductDetailUI(props) {
                 : "244"
               : "343"}
           </Buyer> */}
-          {/* <LinkIcon src="/images/boards/detail/link.png" /> */}
-          {/* <Tooltip
+          <LinkIcon src="/images/boards/detail/link.png" />
+          <Tooltip
             placement="topRight"
-            title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
+            title={`${props.data?.fetchUseditem.useditemAddress?.address} ${props.data?.fetchUseditem.useditemAddress?.addressDetail}`}
           >
             <LocationIcon src="/images/boards/detail/location.png" />
-          </Tooltip> */}
+          </Tooltip>
         </AvatarRight>
       </AvatarWrapper>
 
       <Hr></Hr>
-      <NameRemarksPriceWrapper>
-        <NameRemarksWrapper>
-          <Remarks>{props.data?.fetchUseditem.remarks}</Remarks>
-          <Name>{props.data?.fetchUseditem.name}</Name>
-        </NameRemarksWrapper>
+      {/* <NameRemarksPriceWrapper> */}
+      <NameRemarksWrapper>
+        <Remarks>{props.data?.fetchUseditem.remarks}</Remarks>
+        <Name>{props.data?.fetchUseditem.name}</Name>
+
         <Price>{props.data?.fetchUseditem.price}원</Price>
-      </NameRemarksPriceWrapper>
+      </NameRemarksWrapper>
+      <HeartRitgh>
+        <HeartIcon
+          src="/images/boards/detail/heart.png"
+          onClick={props.onClickLike}
+        />
+        <HeartCount>{props.data?.fetchUseditem.likeCount}</HeartCount>
+      </HeartRitgh>
+      {/* </NameRemarksPriceWrapper> */}
 
       <Banner>
         <Slider {...settings}>
