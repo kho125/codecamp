@@ -59,6 +59,19 @@ export type IBoardComment = {
   deletedAt?: Maybe<Scalars["DateTime"]>;
 };
 
+// 지워야하나?
+export type IProductComment = {
+  __typename?: "BoardComment";
+  _id: Scalars["ID"];
+  writer?: Maybe<Scalars["String"]>;
+  contents: Scalars["String"];
+  rating: Scalars["Float"];
+  user?: Maybe<IUser>;
+  createdAt: Scalars["DateTime"];
+  updatedAt: Scalars["DateTime"];
+  deletedAt?: Maybe<Scalars["DateTime"]>;
+};
+
 export type ICreateBoardCommentInput = {
   writer?: Maybe<Scalars["String"]>;
   password?: Maybe<Scalars["String"]>;

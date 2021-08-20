@@ -13,14 +13,14 @@ export default function Kakaomap() {
     document.head.appendChild(script);
     script.onload = () => {
       window.kakao.maps.load(() => {
-        const container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
+        const container = document.getElementById("map"); // 지도를 담을 영역의 DOM 레퍼런스
         const options = {
-          //지도를 생성할 때 필요한 기본 옵션
-          center: new window.kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-          level: 3, //지도의 레벨(확대, 축소 정도)
+          // 지도를 생성할 때 필요한 기본 옵션
+          center: new window.kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표.
+          level: 3, // 지도의 레벨(확대, 축소 정도)
         };
         // v3가 모두 로드된 후, 이 콜백 함수가 실행됩니다.
-        const map = new window.kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        const map = new window.kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
         // 마커가 표시될 위치입니다
         const markerPosition = new kakao.maps.LatLng(
           37.48539348116102,
