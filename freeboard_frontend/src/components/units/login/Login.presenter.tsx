@@ -43,12 +43,14 @@ export default function LoginUI(props: ILoginUIProps) {
             <img src="/images/boards/login/logo22.png" />
           </Logo>
           <Email__Input
+            type="text"
             name="email"
             placeholder="이메일을 입력해주세요."
             onChange={props.onChangeInputs}
           />
           <Error>{props.inputsErrors.email}</Error>
           <Password__Input
+            type="text"
             name="password"
             placeholder="비밀번호를 입력해주세요."
             onChange={props.onChangeInputs}

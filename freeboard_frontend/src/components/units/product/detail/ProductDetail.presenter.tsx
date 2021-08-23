@@ -20,10 +20,11 @@ import {
   HeartIcon,
   HeartCount,
   HeartRitgh,
+  Product__Contents,
   // NameRemarksPriceWrapper,
   MainPicture,
   Picture,
-  // PictureAllWrapper,
+  PictureAllWrapper,
   PictureWrapper,
   TagsWrapper,
   Tags,
@@ -41,13 +42,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function ProductDetailUI(props) {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  // };
   return (
     <Wrapper>
       <AvatarWrapper>
@@ -82,23 +83,24 @@ export default function ProductDetailUI(props) {
       </AvatarWrapper>
 
       <Hr></Hr>
-      {/* <NameRemarksPriceWrapper> */}
-      <NameRemarksWrapper>
-        <Remarks>{props.data?.fetchUseditem.remarks}</Remarks>
-        <Name>{props.data?.fetchUseditem.name}</Name>
+      <Product__Contents>
+        <NameRemarksWrapper>
+          <Remarks>{props.data?.fetchUseditem.remarks}</Remarks>
+          <Name>{props.data?.fetchUseditem.name}</Name>
 
-        <Price>{props.data?.fetchUseditem.price}원</Price>
-      </NameRemarksWrapper>
-      <HeartRitgh>
-        <HeartIcon
-          src="/images/boards/detail/heart.png"
-          onClick={props.onClickLike}
-        />
-        <HeartCount>{props.data?.fetchUseditem.likeCount}</HeartCount>
-      </HeartRitgh>
-      {/* </NameRemarksPriceWrapper> */}
+          <Price>{props.data?.fetchUseditem.price}원</Price>
+        </NameRemarksWrapper>
+        <HeartRitgh>
+          <HeartIcon
+            src="/images/boards/detail/heart.png"
+            onClick={props.toggle}
+            istoggled={props.istoggled}
+          />
+          <HeartCount>{props.data?.fetchUseditem.likeCount}</HeartCount>
+        </HeartRitgh>
+      </Product__Contents>
 
-      <Banner>
+      {/* <Banner>
         <Slider {...settings}>
           <MainPicture
             src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images?.[0]}`}
@@ -112,8 +114,8 @@ export default function ProductDetailUI(props) {
             ))}
           </PictureWrapper>
         </Slider>
-      </Banner>
-      {/* 
+      </Banner> */}
+
       <PictureAllWrapper>
         <MainPicture
           src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images?.[0]}`}
@@ -126,7 +128,7 @@ export default function ProductDetailUI(props) {
             />
           ))}
         </PictureWrapper>
-      </PictureAllWrapper> */}
+      </PictureAllWrapper>
 
       {typeof window !== "undefined" && (
         <Contents

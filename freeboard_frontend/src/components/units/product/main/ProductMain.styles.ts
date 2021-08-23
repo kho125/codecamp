@@ -179,6 +179,9 @@ export const Heart__Icon2 = styled.img`
   margin-left: 22px;
   width: 20px;
   height: 18.35px;
+  background-image: ${(props) =>
+    props.istoggled ? "url(/images/boards/best/user.png)" : ""};
+  background-size: 100%;
 `;
 
 export const Heart__Count2 = styled.span`

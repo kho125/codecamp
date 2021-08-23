@@ -1,27 +1,60 @@
+import ProductMainUI from "./ProductMain.presenter";
+import { useRouter } from "next/router";
+import { useMutation, useQuery } from "@apollo/client";
+import { MouseEvent, useState, useEffect } from "react";
 import {
   FETCH_USER_LOGGED_IN,
   FETCH_USED_ITEMS,
   TOGGLE_USED_ITEM_PICK,
   FETCH_USED_ITEM_OF_THE_BEST,
+  FETCH_USED_ITEMS_I_PICKED,
 } from "./ProductMain.queries";
-import ProductMainUI from "./ProductMain.presenter";
-import { useMutation, useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
-import { MouseEvent, useState, useEffect } from "react";
 
 export default function ProductMain() {
+  const router = useRouter();
+  const [hasMore, setHasMore] = useState(true);
+  const [istoggled, setIstoggled] = useState(false);
+  const [keyword, setKeyword] = useState("");
+  const { data: zzz, refetch } = useQuery(FETCH_USED_ITEMS);
   const { data } =
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
-  const { data: item } = useQuery(FETCH_USED_ITEMS);
+  const { data: item, fetchMore } = useQuery(FETCH_USED_ITEMS);
   const { data: best } = useQuery(FETCH_USED_ITEM_OF_THE_BEST);
   const [toggleitem] = useMutation(TOGGLE_USED_ITEM_PICK);
+  const { data: isToggled } = useQuery(FETCH_USED_ITEMS_I_PICKED);
   const [baskets, setBaskets] = useState([]);
-  console.log(data);
+  // 징바구니는 처음에 배열로 선언해 놓을 것
+  // useEffect(() => {
+  //   if (!accessToken) {
+  //     alert("로그인 해주세요!");
+  //     router.push("/market/login");
+  //   }
+  // }, []);
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("baskets") || "[]");
     setBaskets(items);
     console.log(items);
   }, []);
+  // 참고로 useEffct 안은 처음 페이지가 렌더링이 될때 실행이 된다.
+  // localStorage에 있는 것들을 json 객체로 변환시켜 items에 담아둔다. 없으면 빈 배열을 담아둔다.
+
+  const onLoadMore = () => {
+    if (!item) return;
+    fetchMore({
+      variables: {
+        page: Math.floor(item?.fetchUseditems.length) / 10 + 1,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        // if (prev.fetchUseditems.length > 100) setHasMore(false);
+        return {
+          fetchUseditems: [
+            ...prev.fetchUseditems,
+            ...fetchMoreResult.fetchUseditems,
+          ],
+        };
+      },
+    });
+  };
 
   const onClickBasket = (basketData) => (event) => {
     console.log(basketData);
@@ -63,10 +96,6 @@ export default function ProductMain() {
     console.log(best?.fetchUseditemsOfTheBest[0].images[0]);
   };
 
-  const router = useRouter();
-  const [keyword, setKeyword] = useState("");
-  const { data: zzz, refetch } = useQuery(FETCH_USED_ITEMS);
-
   function onClickMoveToProductNew() {
     router.push("/product/new");
   }
@@ -94,6 +123,9 @@ export default function ProductMain() {
       aaa={aaa}
       detail={detail}
       // toggle={toggle}
+      istoggled={istoggled}
+      hasMore={hasMore}
+      onLoadMore={onLoadMore}
     />
   );
 }

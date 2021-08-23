@@ -50,7 +50,9 @@ import {
 import { IProductMainUIProps } from "./ProductMain.types";
 import { v4 as uuidv4 } from "uuid";
 import Searchbars02 from "../../../commons/searchbars2/Searchbars02.container";
+import BuildManifestPlugin from "next/dist/build/webpack/plugins/build-manifest-plugin";
 import LayoutNavigation from "../../../commons/banner/LayoutBanner.container";
+import InfiniteScroll from "react-infinite-scroller";
 
 export default function ProductMainUI(props: IProductMainUIProps) {
   return (
@@ -124,6 +126,11 @@ export default function ProductMainUI(props: IProductMainUIProps) {
           onChangeKeyword={props.onChangeKeyword}
         />
 
+<InfiniteScroll
+          pageStart={0}
+          loadMore={props.onLoadMore}
+          hasMore={props.hasMore}
+        >
         <Products>
           <Bar></Bar>
             {props.item?.fetchUseditems.map((data) => (
@@ -151,8 +158,6 @@ export default function ProductMainUI(props: IProductMainUIProps) {
                   </Product>
                 </Sale2>
                 <Price>
-                {/* <Price>{data.price}원</Price> */}
-                {/* <Price>{data.buyer?.name}</Price> */}
                   <Price__Img src="/images/boards/detail/price.png" />
                   <Money>{data.price}원</Money>
                 </Price>
@@ -161,6 +166,7 @@ export default function ProductMainUI(props: IProductMainUIProps) {
             </>
           ))}
         </Products>
+          </InfiniteScroll>
 
         <Button onClick={props.onClickMoveToProductNew}>
           <Registration>상품 등록하기</Registration>

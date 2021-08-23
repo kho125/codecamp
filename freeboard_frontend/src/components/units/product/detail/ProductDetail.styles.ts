@@ -22,13 +22,10 @@ export const NameRemarksWrapper = styled.div`
   flex-direction: column;
 `;
 
-// export const NameRemarksPriceWrapper = styled.div`
-//   height: 128px;
-//   margin-top: 20px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-// `;
+export const Product__Contents = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export const Avatar = styled.img`
   margin-right: 10px;
@@ -73,7 +70,9 @@ export const LocationIcon = styled.img`
   height: 24px;
 `;
 
-export const Hr = styled.hr``;
+export const Hr = styled.hr`
+  margin-bottom: 20px;
+`;
 
 export const Remarks = styled.div`
   height: 27px;
@@ -104,19 +103,24 @@ export const Contents = styled.div`
   color: #4f4f4f;
 `;
 
-export const HeartRitgh = styled.div``;
+export const HeartRitgh = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+`;
 
 export const HeartIcon = styled.img`
   width: 30px;
   height: 27.53px;
-  margin-right: 37px;
 `;
 
 export const HeartCount = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  margin: 3.87px 0 0 5px;
 `;
 
 export const Seller = styled.div`
@@ -160,15 +164,15 @@ export const PictureWrapper = styled.div`
   justify-content: center;
 `;
 
-// export const PictureAllWrapper = styled.div`
-//   width: 100%;
-//   height: 482px;
-//   margin-top: 80px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   align-items: center;
-// `;
+export const PictureAllWrapper = styled.div`
+  width: 100%;
+  height: 482px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export const TagsWrapper = styled.div`
   height: 24px;
