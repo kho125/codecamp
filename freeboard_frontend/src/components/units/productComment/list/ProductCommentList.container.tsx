@@ -1,12 +1,12 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import ProductCommentListUI from "./ProductCommentList.presenter";
-import { FETCH_BOARD_COMMENTS } from "./ProductCommentList.queries";
+import { FETCH_USEDITEM_COMMENTS } from "./ProductCommentList.queries";
 
 export default function ProductCommentList() {
   const router = useRouter();
-  const { data } = useQuery(FETCH_BOARD_COMMENTS, {
-    variables: { boardId: router.query.boardId },
+  const { data } = useQuery(FETCH_USEDITEM_COMMENTS, {
+    variables: { boardId: router.query.usedItemId },
   });
   // 값이변경되면 저장되는 스테이트들(변수들)
 

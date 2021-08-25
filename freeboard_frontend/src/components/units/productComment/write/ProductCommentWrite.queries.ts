@@ -1,29 +1,29 @@
 import { gql } from "@apollo/client";
 
-export const CREATE_BOARD_COMMENT = gql`
-  mutation createBoardComment(
-    $createBoardCommentInput: CreateBoardCommentInput!
-    $boardId: ID!
+export const CREATE_USEDITEM_COMMENT = gql`
+  mutation createUsedItemComment(
+    $createUsedItemCommentInput: CreateUsedItemCommentInput!
+    $usedItemId: ID!
   ) {
-    createBoardComment(
-      createBoardCommentInput: $createBoardCommentInput
-      boardId: $boardId
+    createUsedItemComment(
+      createUsedItemCommentInput: $createUsedItemCommentInput
+      usedItemId: $usedItemId
     ) {
       _id
     }
   }
 `;
 
-export const UPDATE_BOARD_COMMENT = gql`
-  mutation updateBoardComment(
-    $updateBoardCommentInput: UpdateBoardCommentInput!
+export const UPDATE_USEDITEM_COMMENT = gql`
+  mutation updateUsedItemComment(
+    $updateUsedItemCommentInput: UpdateUsedItemCommentInput!
     $password: String
     $boardCommentId: ID!
   ) {
-    updateBoardComment(
-      updateBoardCommentInput: $updateBoardCommentInput
+    updateUsedItemComment(
+      updateUsedItemCommentInput: $updateUsedItemommentInput
       password: $password
-      boardCommentId: $boardCommentId
+      usedItemCommentId: $usedItemCommentId
     ) {
       _id
     }

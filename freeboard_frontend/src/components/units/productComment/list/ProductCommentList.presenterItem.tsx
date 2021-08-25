@@ -5,8 +5,8 @@ import { ChangeEvent, useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
 import ProductCommentWrite from "../write/ProductCommentWrite.container";
 import {
-  DELETE_BOARD_COMMENT,
-  FETCH_BOARD_COMMENTS,
+  DELETE_USEDITEM_COMMENT,
+  FETCH_USEDITEM_COMMENTS,
 } from "./ProductCommentList.queries";
 import {
   Avatar,
@@ -24,14 +24,14 @@ import {
 } from "./ProductCommentList.styles";
 import { IProductCommentListUIItemProps } from "./ProductCommentList.types";
 
-export default function BoardCommentListUIItem(
+export default function UesdItemCommentListUIItem(
   props: IProductCommentListUIItemProps
 ) {
   const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
   const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
   const [password, setPassword] = useState("");
-  const [deleteBoardComment] = useMutation(DELETE_BOARD_COMMENT);
+  const [deleteUesdItemComment] = useMutation(DELETE_USEDITEM_COMMENT);
 
   function onClickUpdate() {
     setIsEdit(true);
@@ -43,15 +43,15 @@ export default function BoardCommentListUIItem(
 
   async function onClickDelete() {
     try {
-      await deleteBoardComment({
+      await deleteUesdItemComment({
         variables: {
           password: password,
           boardCommentId: props.data?._id,
         },
         refetchQueries: [
           {
-            query: FETCH_BOARD_COMMENTS,
-            variables: { boardId: router.query.boardId },
+            query: FETCH_USEDITEM_COMMENTS,
+            variables: { usedItemId: router.query.usedItemId },
           },
         ],
       });

@@ -117,9 +117,9 @@ export default function ProductMainUI(props: IProductMainUIProps) {
             </Best__Right>
           </Best__Box>
         </Best__Boxs> */}
-        <BannerWrapper>
+        {/* <BannerWrapper>
           <LayoutNavigation best={props.best} />
-        </BannerWrapper>
+        </BannerWrapper> */}
         
         <Searchbars02
           refetch={props.refetch}

@@ -1,26 +1,23 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { ChangeEvent, MouseEvent, useState } from "react";
-import { FETCH_BOARD_COMMENTS } from "../list/ProductCommentList.queries";
+import { FETCH_USEDITEM_COMMENTS } from "../list/ProductCommentList.queries";
 import ProductCommentWriteUI from "./ProductCommentWrite.presenter";
 import {
-  CREATE_BOARD_COMMENT,
-  UPDATE_BOARD_COMMENT,
+  CREATE_USEDITEM_COMMENT,
+  UPDATE_USEDITEM_COMMENT,
 } from "./ProductCommentWrite.queries";
 import { IProductCommentWriteProps } from "./ProductCommentWrite.types";
 
 export const INPUTS_INIT = {
-  writer: "",
   contents: "",
-  password: "",
-  rating: 0,
 };
 
 export default function ProductCommentWrite(props: IProductCommentWriteProps) {
   const router = useRouter();
   const [inputs, setInputs] = useState(INPUTS_INIT);
-  const [createBoardComment] = useMutation(CREATE_BOARD_COMMENT);
-  const [updateBoardComment] = useMutation(UPDATE_BOARD_COMMENT);
+  const [createUsedItemComment] = useMutation(CREATE_USEDITEM_COMMENT);
+  const [updateUsedItemComment] = useMutation(UPDATE_USEDITEM_COMMENT);
 
   function onChangeInput(
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -28,21 +25,21 @@ export default function ProductCommentWrite(props: IProductCommentWriteProps) {
     setInputs({ ...inputs, [event.target.name]: event.target.value });
   }
 
-  function onChangeStar(value: number) {
-    setInputs({ ...inputs, rating: value });
-  }
+  // function onChangeStar(value: number) {
+  //   setInputs({ ...inputs, rating: value });
+  // }
 
   async function onClickWrite() {
     try {
-      await createBoardComment({
+      await createUsedItemComment({
         variables: {
-          createBoardCommentInput: { ...inputs },
-          boardId: router.query.boardId,
+          createUsedItemCommentInput: { ...inputs },
+          usedItemId: router.query.usedItem,
         },
         refetchQueries: [
           {
-            query: FETCH_BOARD_COMMENTS,
-            variables: { boardId: router.query.boardId },
+            query: FETCH_USEDITEM_COMMENTS,
+            variables: { usedItemId: router.query.usedItemId },
           },
         ],
       });
@@ -52,32 +49,32 @@ export default function ProductCommentWrite(props: IProductCommentWriteProps) {
     }
   }
 
-  async function onClickUpdate(event: MouseEvent<HTMLButtonElement>) {
-    if (!inputs.contents || !inputs.password) {
-      alert("내용을 모두 입력해 주세요.");
-      return;
-    }
+  // async function onClickUpdate(event: MouseEvent<HTMLButtonElement>) {
+  //   if (!inputs.contents || !inputs.password) {
+  //     alert("내용을 모두 입력해 주세요.");
+  //     return;
+  //   }
 
-    try {
-      await updateBoardComment({
-        variables: {
-          updateBoardCommentInput: { contents: inputs.contents },
-          password: inputs.password,
-          boardCommentId: (event.target as Element).id,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_BOARD_COMMENTS,
-            variables: { boardId: router.query.boardId },
-          },
-        ],
-      });
-      setInputs(INPUTS_INIT);
-      props.setIsEdit?.(false);
-    } catch (error) {
-      alert(error.message);
-    }
-  }
+  //   try {
+  //     await updateUsedItemComment({
+  //       variables: {
+  //         updateUsedItemCommentInput: { contents: inputs.contents },
+  //         password: inputs.password,
+  //         usedItemCommentId: (event.target as Element).id,
+  //       },
+  //       refetchQueries: [
+  //         {
+  //           query: FETCH_USEDITEM_COMMENTS,
+  //           variables: { usedItemId: router.query.usedItemId },
+  //         },
+  //       ],
+  //     });
+  //     setInputs(INPUTS_INIT);
+  //     props.setIsEdit?.(false);
+  //   } catch (error) {
+  //     alert(error.message);
+  //   }
+  // }
 
   return (
     <ProductCommentWriteUI
