@@ -1,4 +1,4 @@
-import head from "next/head";
+import Head from "next/head";
 import { request, gql } from "graphql-request";
 
 const FETCH_USEDITEM = gql`

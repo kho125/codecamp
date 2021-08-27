@@ -25,11 +25,15 @@ export default function WebEditorDetailPage() {
       작성자: <span>{data?.fetchBoard.writer}</span>
       제목: <span>{data?.fetchBoard.title}</span>
       내용:
-      <span
-        dangerouslySetInnerHTML={{
-          __html: DOMPurify.sanitize(data?.fetchBoard.contents),
-        }}
-      />
+      {typeof window !== "undefined" ? (
+        <span
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(data?.fetchBoard.contents),
+          }}
+        />
+      ) : (
+        <div />
+      )}
     </div>
   );
 }
