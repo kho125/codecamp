@@ -200,7 +200,7 @@ import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
-import KakaomapWrite from "../../../commons/kakaomapWrite";
+// import KakaomapWrite from "../../../commons/kakaomapWrite";
 import InputAddress from "../../../commons/inputs/inputAddress";
 export default function ProductWriteUI(props: any) {
   return (

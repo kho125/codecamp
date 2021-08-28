@@ -3,7 +3,7 @@ import {
   Wrapper,
   Main,
   BannerWrapper,
-  // Best__Title,
+  Best__Title,
   // Best__Boxs,
   // Best__Box,
   // Best__Left,
@@ -53,14 +53,16 @@ import Searchbars02 from "../../../commons/searchbars2/Searchbars02.container";
 import BuildManifestPlugin from "next/dist/build/webpack/plugins/build-manifest-plugin";
 import LayoutNavigation from "../../../commons/banner/LayoutBanner.container";
 import InfiniteScroll from "react-infinite-scroller";
+import ProductMainBest from '../mainBest/ProductMainBest.container';
 
 export default function ProductMainUI(props: IProductMainUIProps) {
   return (
     <Full>
       <Main>
     <Wrapper>
-        {/* <Best__Title>베스트 상품</Best__Title>
-        <Best__Boxs>
+        <Best__Title>베스트 상품</Best__Title>
+    <ProductMainBest />
+        {/* <Best__Boxs>
           <Best__Box>
             <Best__Img src="/images/boards/detail/Tap.png" />
             <Best__Left>

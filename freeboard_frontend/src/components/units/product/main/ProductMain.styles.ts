@@ -24,15 +24,15 @@ export const BannerWrapper = styled.div`
   justify-content: center;
 `;
 
-// export const Best__Title = styled.div`
-//   margin-bottom: 40px;
-//   font-weight: bold;
-//   font-size: 36px;
-//   line-height: 42px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
+export const Best__Title = styled.div`
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 // export const Best__Boxs = styled.div`
 //   display: flex;

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Searchs = styled.div`
+  margin-top: 50px;
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
@@ -22,7 +23,7 @@ export const Onsale = styled.div`
   }
 
   :active {
-    color: #000;
+    color: #ffd600;
   }
 `;
 
@@ -36,7 +37,7 @@ export const Soldout = styled.div`
   }
 
   :active {
-    color: #000;
+    color: #ffd600;
   }
 `;
 
@@ -56,6 +57,11 @@ export const Search__Input = styled.input`
     transition: 0.3s;
   }
 `;
+
+// export const SearchIcon = styled.img`
+//   width: 17.5px;
+//   height: 17.5px;
+// `;
 
 export const Date__Input = styled.input`
   margin-left: 24px;
