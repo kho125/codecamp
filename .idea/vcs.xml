@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/com/my-first-react-native" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cp-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nativeeee/PlantAppReactNative" vcs="Git" />
   </component>
 </project>

@@ -10,16 +10,18 @@ export const Wrapper = styled.div`
 `;
 
 export const Background = styled.div`
+  width: 100%;
   background-color: #000;
   opacity: 0.8;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: -1;
+  background-image: cover;
 `;
 
 export const Test = styled.div`
-  width: 1920px;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;

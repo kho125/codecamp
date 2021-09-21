@@ -53,7 +53,7 @@ import Searchbars02 from "../../../commons/searchbars2/Searchbars02.container";
 import BuildManifestPlugin from "next/dist/build/webpack/plugins/build-manifest-plugin";
 import LayoutNavigation from "../../../commons/banner/LayoutBanner.container";
 import InfiniteScroll from "react-infinite-scroller";
-import ProductMainBest from '../mainBest/ProductMainBest.container';
+import ProductMainBest from '../../mainBest/ProductMainBest.container';
 
 export default function ProductMainUI(props: IProductMainUIProps) {
   return (

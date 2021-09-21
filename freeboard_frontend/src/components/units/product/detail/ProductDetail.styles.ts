@@ -212,241 +212,208 @@ export const ButtonRow = styled.div`
   justify-content: space-between;
 `;
 
+// djiosfaawjsifjoiawejfoaewiofjaiowejfioajseofjdasofjoiasdjiofjasdiojfiosadjfoijadsiofjoiasdjoifjadsoijfoidjsafioasdjiofj
+
+// -dsaopifjopiajsopdifjioasdjfojoasdifioasndoivnoisdcoimsdiocmjiodsncoisdaniucjhnuiafhiasudfhiupasdhnfu
+
 // import styled from "@emotion/styled";
-// // import ReactPlayer from "react-player";
 
 // export const Wrapper = styled.div`
-//   width: 1200px;
-//   height: 1800px;
-//   margin: 100px;
-// `;
-
-// export const Detail = styled.div`
-//   border: 1px solid black;
-//   padding: 80px 102px 100px 102px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   border: none;
-//   box-shadow: 0 0 10px gray;
-// `;
-
-// export const Header = styled.div`
 //   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   border-bottom: 1px solid #bdbdbd;
-//   padding-bottom: 20px;
 // `;
-
-// export const AvatarWrapper = styled.div`
-//   display: flex;
-// `;
-
-// export const Avatar = styled.img`
-//   margin-right: 16px;
-// `;
-
-// export const Info = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-// `;
-
-// export const Writer = styled.div`
-//   font-weight: bold;
-//   font-size: 16px;
-//   line-height: 24px;
-// `;
-
-// export const CreatedAt = styled.div`
-//   color: #bdbdbd;
-// `;
-
-// export const IconWrapper = styled.div`
-//   text-align: center;
-// `;
-
-// export const LinkIcon = styled.img`
-//   margin-right: 15px;
-// `;
-
-// export const LocationIcon = styled.img``;
-
-// export const Product__Info = styled.div`
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   /* border-bottom: 1px solid #bdbdbd; */
-//   padding-bottom: 20px;
-// `;
-
-// export const Product__Left = styled.div``;
-
 // export const Contents = styled.div`
-//   margin-top: 20px;
-//   font-weight: 500;
-//   font-size: 18px;
-//   line-height: 27px;
-//   color: #bdbdbd;
+//   max-width: 792px;
+//   width: 100%;
+//   margin: 0 auto;
+//   margin-top: 100px;
 // `;
 
+// export const TopContentsWriter = styled.div`
+//   width: 100%;
+//   margin: 80px 0px 20px 0px;
+//   padding-bottom: 24px;
+//   border-bottom: 1px solid #bdbdbd;
+//   display: flex;
+//   justify-content: space-between;
+// `;
+// export const WriterProfileImg = styled.img`
+//   width: 48px;
+//   height: 48px;
+// `;
+// export const WriterInfo = styled.div`
+//   width: 880px;
+//   height: 52px;
+//   margin-left: 16px;
+// `;
 // export const Name = styled.div`
-//   margin-top: 4px;
-//   font-weight: bold;
+//   font-size: 22px;
+//   font-weight: 500;
+//   line-height: 25px;
+//   /* border: 1px solid black; */
+//   margin: 0;
+// `;
+// export const Date = styled.div`
+//   color: #828282;
+//   font-size: 15px;
+//   font-weight: 400;
+//   line-height: 30px;
+//   margin: 0;
+// `;
+// export const WriterIcon = styled.div`
+//   width: 70px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// `;
+// export const LinkIcon = styled.img`
+//   width: 27px;
+//   height: 14px;
+//   cursor: pointer;
+// `;
+
+// export const MapIcon = styled.img`
+//   cursor: pointer;
+//   margin-left: 10px;
+// `;
+
+// // !==================== MainContentsProduct Start ====================
+// export const MainContentsProduct = styled.div`
+//   width: 100%;
+// `;
+// export const ProductInfo = styled.div`
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 80px;
+// `;
+
+// export const InfoTop = styled.div`
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   margin-bottom: 80px;
+// `;
+
+// export const InfoTopLeft = styled.div`
+//   width: 500px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: left;
+// `;
+
+// export const Title1 = styled.div`
+//   font-size: 18px;
+//   font-weight: 500px;
+//   color: #bdbdbd;
+//   line-height: 26.64px;
+// `;
+
+// export const Title2 = styled.div`
 //   font-size: 24px;
-//   line-height: 36px;
+//   line-height: 35.52px;
+//   font-weight: bold;
 //   color: #4f4f4f;
+//   margin-bottom: 6px;
 // `;
 
 // export const Price = styled.div`
-//   margin-top: 8px;
-//   font-weight: bold;
 //   font-size: 36px;
-//   line-height: 53px;
+//   font-weight: 700;
+//   line-height: 53.28px;
 // `;
 
-// export const Product__Right = styled.div``;
-
-// export const HeartIcon = styled.img`
-//   margin-right: 37px;
+// export const InfoTopRight = styled.div`
+//   width: 30px;
 // `;
-
-// export const HeartCount = styled.div`
-//   font-weight: 500;
+// export const LikeBtn = styled.img`
+//   width: 30px;
+//   height: 27.53px;
+//   cursor: pointer;
+// `;
+// export const LikeCount = styled.div`
 //   font-size: 18px;
+//   font-weight: 500;
+//   color: #000;
+//   text-align: center;
 //   line-height: 27px;
-//   margin: 3.87px 0 0 5px;
+//   padding-top: 4px;
 // `;
 
-// export const Banner = styled.div`
-//   width: 384px;
-//   height: 384px;
-//   padding: 44px;
-//   margin-top: 80px;
+// // ! ----- images start -----
+// export const InfoMiddle = styled.div`
+//   width: 504px;
+//   min-height: 400px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   align-items: center;
 // `;
-
-// export const Slider = styled.div``;
-
-// export const MainPicture = styled.img`
-//   width: 384px;
-//   height: 384px;
-//   background-color: black;
+// export const MainImage = styled.img`
+//   width: 296px;
+//   height: 296px;
+//   background-color: #bdbdbd;
 // `;
-
-// export const Picture = styled.img`
+// export const SubImage = styled.div`
 //   width: 78px;
 //   height: 78px;
-//   margin-left: 12px;
-//   margin-right: 12px;
-//   background-color: green;
+//   background-color: gray;
+//   margin: 20px 24px 80px 24px;
+// `;
+// export const InfoBottom = styled.div`
+//   width: 100%;
+// `;
+// export const InfoText = styled.p`
+//   width: 100%;
+//   font-size: 18px;
+//   font-weight: 500;
+//   line-height: 26.64px;
+// `;
+// export const InfoTags = styled.p`
+//   font-size: 16px;
+//   font-weight: 500;
+//   line-height: 23.68px;
+//   color: #bdbdbd;
+//   padding-bottom: 20px;
 // `;
 
-// export const PictureWrapper = styled.div`
+// // ! ----- Map start -----
+// export const Map = styled.div`
 //   width: 100%;
+//   font-size: 50px;
+//   margin: 0 auto;
+//   border-top: 1px solid #bdbdbd;
+//   padding-top: 80px;
 //   display: flex;
+//   flex-direction: row;
 //   justify-content: center;
 // `;
 
-// export const Images = styled.div`
-//   margin-top: 20px;
-//   margin-bottom: 80px;
+// // !==================== BottomBtn Start ====================
+// export const BottomBtn = styled.div`
+//   width: 100%;
+//   border-top: 1px solid #bdbdbd;
 //   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   margin-top: 76px;
+//   padding: 80px;
 // `;
-
-// export const Images__1 = styled.div`
-//   margin-right: 24px;
-//   width: 78px;
-//   height: 78px;
-//   background-color: #ddd;
-// `;
-
-// export const Images__2 = styled.div`
-//   margin-right: 24px;
-//   width: 78px;
-//   height: 78px;
-//   background-color: #ddd;
-// `;
-
-// export const Images__3 = styled.div`
-//   margin-right: 24px;
-//   width: 78px;
-//   height: 78px;
-//   background-color: #ddd;
-// `;
-
-// export const Images__4 = styled.div`
-//   margin-right: 24px;
-//   width: 78px;
-//   height: 78px;
-//   background-color: #ddd;
-// `;
-
-// export const PContents = styled.div`
-//   display: flex;
-//   margin-bottom: 40px;
-// `;
-
-// export const Product__Contents = styled.div``;
-
-// export const Tags = styled.div`
-//   margin-right: 400px; // 고쳐야됨
-//   margin-bottom: 40px;
-// `;
-
-// export const Tag = styled.div`
-//   font-weight: 500;
-//   font-size: 16px;
-//   line-height: 24px;
-//   color: #bdbdbd;
-// `;
-
-// export const Bar = styled.div`
-//   margin-bottom: 80px;
-//   width: 590px;
-//   border: 1px solid #bdbdbd;
-// `;
-
-// export const Map = styled.div`
-//   margin-bottom: 76px;
-//   width: 590px;
-//   height: 262px;
-//   background-color: #ddd;
-// `;
-
-// export const Bar2 = styled.div`
-//   margin-bottom: 84px;
-//   width: 590px;
-//   border: 1px solid #bdbdbd;
-// `;
-
-// export const Button = styled.div``;
-
-// export const Button__List = styled.button`
-//   margin-right: 24px;
-//   width: 160px;
-//   height: 45px;
-//   border: none;
+// export const ButtonBox = styled.button`
+//   width: 179px;
+//   height: 52px;
 //   background-color: #bdbdbd;
-//   cursor: pointer;
-//   transition: 0.3s;
-//   :hover {
-//     box-shadow: 1px 1px 1px;
-//     transition: 0.3s;
-//   }
-// `;
-
-// export const Button__Repair = styled.button`
-//   width: 160px;
-//   height: 45px;
+//   font-size: 16px;
+//   font-weight: 500;
+//   line-height: 23.68px;
+//   text-align: center;
 //   border: none;
-//   background-color: #ffd600;
+//   margin: 0 12px;
 //   cursor: pointer;
-//   transition: 0.3s;
+
 //   :hover {
-//     box-shadow: 1px 1px 1px;
-//     transition: 0.3s;
+//     background-color: #ffd600;
 //   }
 // `;

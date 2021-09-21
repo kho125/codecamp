@@ -77,9 +77,7 @@ const List = styled.View`
   background-color: white;
   width: 98%;
   height: 124px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
+  padding: 20px 20px 0 20px;
   margin-bottom: 20px;
   border-radius: 10px;
   elevation: 2;

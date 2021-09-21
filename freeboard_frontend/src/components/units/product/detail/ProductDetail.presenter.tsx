@@ -55,23 +55,14 @@ export default function ProductDetailUI(props) {
         <AvatarLeft>
           <Avatar src="/images/avatar.png" />
           <Info>
-            <Seller>
-              {props.data ? props.data.fetchUseditem.seller.name : "111"}
-            </Seller>
+            {/* <Seller>{props.data?.fetchUseditem.seller.name}</Seller> */}
             <Date>
-              {props.data ? props.data.fetchUseditem.remarks : "12121"}
+              {/* {getDate(props.data?.fetchUseditem.createdAt)} */}
+              {props.data?.fetchUseditem.createdAt}
             </Date>
           </Info>
         </AvatarLeft>
         <AvatarRight>
-          {/* <Buyer>
-            구입자:
-            {props.data
-              ? props.data.fetchUseditem.buyer
-                ? props.data.fetchUseditem.buyer.name
-                : "244"
-              : "343"}
-          </Buyer> */}
           <LinkIcon src="/images/boards/detail/link.png" />
           <Tooltip
             placement="topRight"
@@ -157,174 +148,120 @@ export default function ProductDetailUI(props) {
   );
 }
 
+// ------------------------------------------------------------------------=-=-=-==-=-=-=-=-=-=-=-=-=-=
+
+// import { getDate } from "../../../../commons/libraries/utils";
+// import DOMPurify from "dompurify";
 // import {
 //   Wrapper,
-//   Detail,
-//   Header,
-//   AvatarWrapper,
-//   Avatar,
-//   Info,
-//   Writer,
-//   CreatedAt,
-//   IconWrapper,
-//   LinkIcon,
-//   LocationIcon,
-//   Product__Info,
-//   Product__Left,
 //   Contents,
+//   TopContentsWriter,
+//   WriterProfileImg,
+//   WriterInfo,
 //   Name,
-//   Price,
-//   Product__Right,
-//   HeartIcon,
-//   HeartCount,
-//   Banner,
-//   MainPicture,
-//   Picture,
-//   PictureWrapper,
-//   Images,
-//   Images__1,
-//   Images__2,
-//   Images__3,
-//   Images__4,
-//   Tags,
-//   Tag,
-//   Bar,
+//   Date,
+//   WriterIcon,
+//   LinkIcon,
+//   MapIcon,
+//   MainContentsProduct,
+//   ProductInfo,
 //   Map,
-//   Bar2,
-//   Button,
-//   Button__List,
-//   Button__Repair,
+//   InfoTop,
+//   InfoTopLeft,
+//   Title1,
+//   Title2,
+//   Price,
+//   InfoTopRight,
+//   LikeBtn,
+//   LikeCount,
+//   InfoMiddle,
+//   MainImage,
+//   SubImage,
+//   InfoBottom,
+//   InfoText,
+//   InfoTags,
+//   BottomBtn,
+//   ButtonBox,
 // } from "./ProductDetail.styles";
-// import { IProductDetailUIProps } from "./ProductDetail.types";
-// import { Tooltip } from "antd";
-// // import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import DOMPurify from "dompurify";
-// import Button01 from "../../../commons/buttons/Button01";
-// import KakaomapDetail from "../../../commons/kakaomapDetail";
+// import KakaoMap01 from "../../../commons/kakaomapDetail";
 
-// export default function ProductDetailUI(props: IProductDetailUIProps) {
-//   // const settings = {
-//   //   dots: true,
-//   //   infinite: true,
-//   //   speed: 500,
-//   //   slidesToShow: 1,
-//   //   slidesToScroll: 1,
-//   // };
+// export default function MarketDetailUI(props: any) {
 //   return (
-//     <>
-//       <Wrapper>
-//         <Detail>
-//           <Header>
-//             <AvatarWrapper>
-//               <Avatar src="/images/avatar.png" />
-//               <Info>
-//                 <Writer>
-//                   {/* {props.data ? props.data.fetchUseditem.seller.name : "111"} */}
-//                   {props.data?.props.data.fetchUseditem.seller.name}
-//                 </Writer>
-//                 <CreatedAt>
-//                   {/* {props.data ? props.data.fetchUseditem.remarks : "12121"} */}
-//                   {props.data?.props.data.fetchUseditem.remarks}
-//                 </CreatedAt>
-//               </Info>
-//             </AvatarWrapper>
+//     <Wrapper>
+//       <Contents>
+//         {/* ------------- 상단 판매자 정보 START --------------- */}
+//         <TopContentsWriter>
+//           <WriterProfileImg src="/images/avatar.png" />
+//           <WriterInfo>
+//             <Name>{props.data?.fetchUseditem.seller.name}</Name>
+//             <Date>{getDate(props.data?.fetchUseditem.createdAt)}</Date>
+//           </WriterInfo>
+//           <WriterIcon>
+//             {/*---- 우측 픽토그램 ---*/}
 
-//             <IconWrapper>
-//               <LinkIcon src="/images/boards/detail/link.png" />
-//               <Tooltip
-//                 placement="topRight"
-//                 title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
-//               >
-//                 <LocationIcon src="/images/boards/detail/location.png" />
-//               </Tooltip>
-//             </IconWrapper>
-//           </Header>
+//             <LinkIcon src="/images/icon_link.png" />
+//             <MapIcon src="/images/icon_location.png" alt="작성자 주소" />
+//           </WriterIcon>
+//         </TopContentsWriter>
+//         {/* ------------- 상단 판매자 정보 END --------------- */}
 
-//           <Product__Info>
-//             <Product__Left>
-//               {/* <Contents>2019 LTE 32GB</Contents>
-//               <Product>삼성전자 갤럭시탭A 10.1</Product>
-//               <Price>240,120원</Price> */}
-//               <Contents>{props.data?.fetchUseditem.contents}</Contents>
-//               <Name>{props.data?.fetchUseditem.name}</Name>
-//               <Price>{props.data?.fetchUseditem.price}</Price>
-//             </Product__Left>
+//         <MainContentsProduct>
+//           <ProductInfo>
+//             <InfoTop>
+//               <InfoTopLeft>
+//                 <Title1>{props.data?.fetchUseditem.remarks}</Title1>
+//                 <Title2>{props.data?.fetchUseditem.name} </Title2>
+//                 <Price>{props.data?.fetchUseditem.price}</Price>
+//               </InfoTopLeft>
+//               <InfoTopRight>
+//                 <LikeBtn
+//                   src="/images/icon_like_2.png"
+//                   onClick={props.onClickToggle}
+//                 />
+//                 <LikeCount>{props.data?.fetchUseditem.pickedCount}</LikeCount>
+//               </InfoTopRight>
+//             </InfoTop>
 
-//             <Product__Right>
-//               <HeartIcon onClick={props.onClickLike} />
-//               <HeartCount>{props.data?.fetchBoard.likeCount}</HeartCount>
-//               {/* <HeartIcon src="/images/boards/detail/heart.png" /> */}
-//               {/* <HeartCount>20</HeartCount> */}
-//             </Product__Right>
-//           </Product__Info>
-
-//           <Banner>
-//             {/* <Slider {...settings}> */}
-
-//             <MainPicture
-//               src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images?.[0]}`}
-//             />
-//             <PictureWrapper>
-//               {props.data?.fetchUseditem.images?.map((data: string) => (
-//                 <Picture
+//             {/* // ! ---- images ---- */}
+//             <InfoMiddle>
+//               {props.data?.fetchUseditem.images.map((data: any) => (
+//                 <MainImage
 //                   key={data}
 //                   src={`https://storage.googleapis.com/${data}`}
 //                 />
 //               ))}
-//             </PictureWrapper>
-//             {/* </Slider> */}
-//           </Banner>
-//           <Images>
-//             <Images__1></Images__1>
-//             <Images__2></Images__2>
-//             <Images__3></Images__3>
-//             <Images__4></Images__4>
-//           </Images>
 
-//           {/* <PContents> */}
-//           {/* <Product__Contents>
-//               {props.data?.fetchBoard.contents}
-//             </Product__Contents> */}
-//           {/* <Product__Contents>
-//               <p>
-//                 액정에 잔기스랑 주변부 스크레치있습니다만 예민하신분아니면 전혀
-//                 신경쓰이지않을정도입니다
-//                 <br /> 박스 보관중입니다
-//                 <br /> 메모용과 넷플릭스용으로만쓰던거라 뭘 해보질 않아 기능이나
-//                 문제점을 못느꼈네요 잘 안써서 싸게넘깁니다
-//                 <br />
-//                 택배거래안합니다
-//               </p>
-//             </Product__Contents>
-//           </PContents> */}
+//               {/* <SubImage> </SubImage> */}
+//             </InfoMiddle>
 
-//           {typeof window !== "undefined" && (
-//             <Contents
-//               dangerouslySetInnerHTML={{
-//                 __html: DOMPurify.sanitize(props.data?.fetchUseditem.contents),
-//               }}
-//             />
-//           )}
-
-//           <Tags>
-//             <Tag>#삼성전자 #갤럭시탭 #갓성비</Tag>
-//           </Tags>
-//           <Bar></Bar>
+//             {/* // ! ---- bottom txt ----  */}
+//             <InfoBottom>
+//               {typeof window !== "undefined" ? (
+//                 <InfoText
+//                   dangerouslySetInnerHTML={{
+//                     __html: DOMPurify.sanitize(
+//                       props.data?.fetchUseditem.contents
+//                     ),
+//                   }}
+//                 />
+//               ) : (
+//                 <div />
+//               )}
+//               <InfoTags>{props.data?.fetchUseditem.tags}</InfoTags>
+//             </InfoBottom>
+//           </ProductInfo>
 //           <Map>
-//             <KakaomapDetail data={props.data} />
+//             <KakaoMap01 isDetail={true} />
 //           </Map>
-//           <Bar2></Bar2>
+//         </MainContentsProduct>
 
-//           <Button>
-//             {/* <Button__List>목록으로</Button__List>
-//             <Button__Repair>수정하기</Button__Repair> */}
-//             <Button01 buttonName="목록으로" gotowhere={props.gotoMain} />
-//             <Button01 buttonName="구매하기" gotowhere={props.purchase} />
-//           </Button>
-//         </Detail>
-//       </Wrapper>
-//     </>
+//         {/* --------- 하단 버튼 start ---------- */}
+//         <BottomBtn>
+//           <ButtonBox onClick={props.onClickMoveToList}>목록으로</ButtonBox>
+//           <ButtonBox>수정하기</ButtonBox>
+//           <ButtonBox onClick={props.onClickDelete}>삭제하기</ButtonBox>
+//         </BottomBtn>
+//       </Contents>
+//     </Wrapper>
 //   );
 // }

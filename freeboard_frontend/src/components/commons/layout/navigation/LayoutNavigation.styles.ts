@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Navigation = styled.div`
   height: 64px;
-  background-color: #ffd600;
+  background-color: #e77f67;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 `;
 
@@ -12,33 +12,33 @@ export const Menu = styled.div`
   padding: 18px 0;
 `;
 
-export const Dog = styled.a`
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 27px;
-  color: #514400;
-`;
+// export const Dog = styled.a`
+//   font-weight: 700;
+//   font-size: 18px;
+//   line-height: 27px;
+//   color: #000;
+// `;
 
 export const FreeBoard = styled.a`
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
-  color: #514400;
+  color: #000;
 `;
 
 export const Market = styled.a`
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
-  color: #514400;
+  color: #000;
 `;
 
-export const MyPage = styled.a`
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 27px;
-  color: #514400;
-`;
+// export const MyPage = styled.a`
+//   font-weight: 700;
+//   font-size: 18px;
+//   line-height: 27px;
+//   color: #000;
+// `;
 
 export const Bar = styled.div`
   color: #fff;

@@ -7,8 +7,7 @@ import {
   FETCH_USED_ITEMS_I_PICKED,
   TOGGLE_USED_ITEM_PICK,
 } from "./ProductDetail.queries";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function ProductDetail() {
   const router = useRouter();
@@ -25,39 +24,8 @@ export default function ProductDetail() {
       useditemId: router.query.useditemId,
     },
   });
-
+  console.log(data);
   const { data: isToggled } = useQuery(FETCH_USED_ITEMS_I_PICKED);
-
-  // console.log(isToggled?.fetchUseditemsIPicked[3]._id);
-  useEffect(() => {
-    async function aaa() {
-      const result = await toggleitem({
-        variables: { useditemId: router.query.bbb },
-      });
-      const result2 = await toggleitem({
-        variables: { useditemId: router.query.bbb },
-      });
-      setIstoggled(result2.data.toggleUseditemPick);
-    }
-    aaa();
-    // if (istoggled === false) {
-
-    // isToggled?.fetchUseditemsIPicked.forEach((picked) => {
-    //   return picked._id === router.query.bbb && setIstoggled(true);
-    // });
-
-    //   for (var i = 0; i < isToggled?.fetchUseditemsIPicked.length; i++) {
-    //     if (isToggled?.fetchUseditemsIPicked[i]._id === router.query.bbb) {
-    //       setIstoggled(true);
-
-    //     } else {
-
-    //     }
-    //   }
-    // } else {
-    // }
-    // }
-  }, []);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -134,7 +102,7 @@ export default function ProductDetail() {
     if (!istoggled) setIstoggled(true);
     // console.log(isToggled);
   };
-  console.log(isToggled);
+  // console.log(isToggled);
 
   const purchase = async () => {
     try {
@@ -163,3 +131,70 @@ export default function ProductDetail() {
     />
   );
 }
+
+// import { useMutation, useQuery } from "@apollo/client";
+// import { useRouter } from "next/router";
+// import { useContext } from "react";
+// import { GlobalContext } from "../../../../../pages/_app";
+// import MarketDetailUI from "./ProductDetail.presenter";
+// import {
+//   DELETE_USED_ITEM,
+//   FETCH_USED_ITEM,
+//   TOGGLE_USED_ITEM_PICK,
+// } from "./ProductDetail.queries";
+
+// export default function MarketDetail() {
+//   const router = useRouter();
+//   const { userInfo } = useContext(GlobalContext);
+//   const { data } = useQuery(FETCH_USED_ITEM, {
+//     variables: { useditemId: router.query.detailpages },
+//   });
+//   const [toggleUseditemPickMutation] = useMutation(TOGGLE_USED_ITEM_PICK);
+//   const [deleteUseditem] = useMutation(DELETE_USED_ITEM);
+
+//   function onClickMoveToList() {
+//     router.push("/product/main");
+//   }
+
+//   // !----- 찜하기 토글 -----!//
+//   const onClickToggle = async () => {
+//     try {
+//       await toggleUseditemPickMutation({
+//         variables: { useditemId: router.query.detailpages },
+//         refetchQueries: [
+//           {
+//             query: FETCH_USED_ITEM,
+//             variables: {
+//               useditemId: router.query.detailpages,
+//             },
+//           },
+//         ],
+//       });
+//     } catch (error) {
+//       alert(error.message);
+//     }
+//   };
+
+//   // !----- 게시글 삭제하기 -----!//
+//   const onClickDelete = async () => {
+//     try {
+//       await deleteUseditem({
+//         variables: { useditemId: router.query.detailpages },
+//       });
+//       alert("해당 글을 삭제합니다.");
+//       router.push("/market/list");
+//     } catch (error) {
+//       alert(error.message);
+//     }
+//   };
+
+//   return (
+//     <MarketDetailUI
+//       data={data}
+//       onClickMoveToList={onClickMoveToList}
+//       userInfo={userInfo}
+//       onClickToggle={onClickToggle}
+//       onClickDelete={onClickDelete}
+//     />
+//   );
+// }

@@ -94,8 +94,10 @@ export const Button = styled.button`
   border: 1px solid gray;
   margin: 0 12px;
   cursor: pointer;
+  transition: 0.2s;
 
   :hover {
+    transition: 0.2s;
     background-color: #ffd600;
     border: none;
   }

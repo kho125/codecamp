@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
-import { ComponentType, useContext, useEffect, useState } from "react";
+import { ComponentType, useContext, useEffect } from "react";
 import { GlobalContext } from "../../../../pages/_app";
 
+// eslint-disable-next-line react/display-name
 const withAuth = (Component: ComponentType) => (props: any) => {
   const router = useRouter();
 

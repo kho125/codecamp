@@ -13,7 +13,7 @@ export default function LayoutHeaderUI(props: ILayoutHeaderUIProps) {
   return (
     <Wrapper>
       <InnerWrapper>
-        <InnerLogo onClick={props.onClickLogo}>❄️ Logo</InnerLogo>
+        <InnerLogo onClick={props.onClickLogo}>오~ 마켓</InnerLogo>
         {accessToken ? (
           <div>회원님 환영합니다.</div>
         ) : (

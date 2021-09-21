@@ -84,10 +84,16 @@ export const SearchButton = styled.button`
   width: 124px;
   height: 52px;
   margin-left: 16px;
-  background-color: black;
+  background-color: #000;
   cursor: pointer;
   color: #fff;
-  /* border: none; */
+  border: none;
+  transition: 0.3s;
+
+  :hover {
+    transition: 0.3s;
+    background-color: #555;
+  }
 `;
 
 export const Address = styled.input`

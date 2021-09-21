@@ -39,43 +39,63 @@ export default function BoardListUI(props: IBoardListUIProps) {
     <Wrapper>
       <Best__Title>베스트 게시글</Best__Title>
       <Bests>
-        <Best__1>
+        {/* {data?.fetchUseditemsOfTheBest.map((data: any) => (
+        <Best__1 key={data._id}>
           <Img__1 src="aaa/img1.png" />
-          <Title>게시물 제목입니다.</Title>
+          <Title></Title>
 
           <Best__Bottom>
             <Best__left>
-              <User__Img src="./images/boards/best/user.png" />
-              <User__Name>노원두</User__Name>
+              <User__Img src={`https://storage.googleapis.com/${data.images[0] || ""}`} />
+              <User__Name></User__Name>
             </Best__left>
 
             <Best__Right>
               <Like__Img src="./images/boards/best/like.png" />
-              <Like__Count>356</Like__Count>
+              <Like__Count></Like__Count>
             </Best__Right>
           </Best__Bottom>
-          <Data>Date : 2021.02.18</Data>
+          <Data></Data>
+        </Best__1>
+        ))} */}
+
+        <Best__1>
+          <Img__1 src="aaa/img1.png" />
+          <Title>노는게 제일 좋아</Title>
+
+          <Best__Bottom>
+            <Best__left>
+              <User__Img src="./images/boards/best/user.png" />
+              <User__Name>뽀로로</User__Name>
+            </Best__left>
+
+            <Best__Right>
+              <Like__Img src="./images/boards/best/like.png" />
+              <Like__Count>999</Like__Count>
+            </Best__Right>
+          </Best__Bottom>
+          <Data>Date : 2021.07.04</Data>
         </Best__1>
         <Best__2>
           <Img__1 src="aaa/img1.png" />
-          <Title>게시물 제목입니다.</Title>
+          <Title>마지막이네요👍🏼</Title>
 
           <Best__Bottom>
             <Best__left>
               <User__Img src="./images/boards/best/user.png" />
-              <User__Name>노원두</User__Name>
+              <User__Name>코드캠프</User__Name>
             </Best__left>
 
             <Best__Right>
               <Like__Img src="./images/boards/best/like.png" />
-              <Like__Count>356</Like__Count>
+              <Like__Count>999</Like__Count>
             </Best__Right>
           </Best__Bottom>
-          <Data>Date : 2021.02.18</Data>
+          <Data>Date : 2021.09.30</Data>
         </Best__2>
         <Best__3>
           <Img__1 src="aaa/img1.png" />
-          <Title>게시물 제목입니다.</Title>
+          <Title>코드들과 친해지세요 그리고 전 항상..</Title>
 
           <Best__Bottom>
             <Best__left>
@@ -85,27 +105,27 @@ export default function BoardListUI(props: IBoardListUIProps) {
 
             <Best__Right>
               <Like__Img src="./images/boards/best/like.png" />
-              <Like__Count>356</Like__Count>
+              <Like__Count>999</Like__Count>
             </Best__Right>
           </Best__Bottom>
-          <Data>Date : 2021.02.18</Data>
+          <Data>Date : 2021.09.30</Data>
         </Best__3>
         <Best__4>
           <Img__1 src="aaa/img1.png" />
-          <Title>게시물 제목입니다.</Title>
+          <Title>ㅠㅠㅠㅠㅠㅠㅠㅠ</Title>
 
           <Best__Bottom>
             <Best__left>
               <User__Img src="./images/boards/best/user.png" />
-              <User__Name>노원두</User__Name>
+              <User__Name>원두없는 원두팀</User__Name>
             </Best__left>
 
             <Best__Right>
               <Like__Img src="./images/boards/best/like.png" />
-              <Like__Count>356</Like__Count>
+              <Like__Count>999</Like__Count>
             </Best__Right>
           </Best__Bottom>
-          <Data>Date : 2021.02.18</Data>
+          <Data>Date : 2021.10.01</Data>
         </Best__4>
       </Bests>
 

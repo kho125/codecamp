@@ -21,8 +21,8 @@ import styled from "@emotion/styled";
 // `;
 
 export const Wrapper = styled.div`
-  height: 70px;
-  background-color: #000;
+  height: 100px;
+  background-color: #e77f67;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@ export const InnerWrapper = styled.div`
 `;
 
 export const InnerLogo = styled.div`
-  font-size: 20px;
+  font-size: 80px;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
