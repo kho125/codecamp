@@ -54,7 +54,6 @@ export default function ProductMainBest() {
           </Best__Right>
         </Best__Box>
       ))}
-      ;
     </Best__Boxs>
   );
 }
