@@ -152,7 +152,7 @@ export default function ProductMainUI(props: IProductMainUIProps) {
                     <Tag id={data._id} onClick={props.onClickMoveToProductDetail}>{data.tags}</Tag>
                     <User>
                       <User__Img src="/images/boards/best/user.png" />
-                      <User__Name>{data.seller.name}</User__Name>
+                      {/* <User__Name>{data.seller.name}</User__Name> */}
                       <Heart__Icon2 src="/images/boards/detail/heart.png" />
                       {/* <Heart__Icon2 onClick={props.toggle} id={data._id}></Heart__Icon2> */}
                       <Heart__Count2>{data.pickedCount}</Heart__Count2>
