@@ -4,16 +4,6 @@ import {
   Main,
   BannerWrapper,
   Best__Title,
-  // Best__Boxs,
-  // Best__Box,
-  // Best__Left,
-  // Best__Img,
-  // Best__Name,
-  // Best__Contents,
-  // Best__Price,
-  // Best__Right,
-  // Heart__Icon,
-  // Heart__Count,
   Products,
   Bar,
   Sale,
@@ -62,66 +52,6 @@ export default function ProductMainUI(props: IProductMainUIProps) {
     <Wrapper>
         <Best__Title>베스트 상품</Best__Title>
     <ProductMainBest />
-        {/* <Best__Boxs>
-          <Best__Box>
-            <Best__Img src="/images/boards/detail/Tap.png" />
-            <Best__Left>
-              <Best__Name>삼성전자 갤럭시탭A 10.1</Best__Name>
-              <Best__Contents>2019 LTE 32GB</Best__Contents>
-              <Best__Price>240,120원</Best__Price>
-            </Best__Left>
-
-            <Best__Right>
-              <Heart__Icon src="/images/boards/detail/heart.png" />
-              <Heart__Count>20</Heart__Count>
-            </Best__Right>
-          </Best__Box>
-
-          <Best__Box>
-            <Best__Img src="/images/boards/detail/msi.png" />
-            <Best__Left>
-              <Best__Name>MSI MPG Z490 게이밍 엣지</Best__Name>
-              <Best__Contents>인텔 CPU용</Best__Contents>
-              <Best__Price>274,260원</Best__Price>
-            </Best__Left>
-
-            <Best__Right>
-              <Heart__Icon src="/images/boards/detail/heart.png" />
-              <Heart__Count>28</Heart__Count>
-            </Best__Right>
-          </Best__Box>
-
-          <Best__Box>
-            <Best__Img src="/images/boards/detail/lego.png" />
-            <Best__Left>
-              <Best__Name>레고 오버워치 레킹 볼</Best__Name>
-              <Best__Contents>게임보다 더 귀여움 실화?</Best__Contents>
-              <Best__Price>28,370원</Best__Price>
-            </Best__Left>
-
-            <Best__Right>
-              <Heart__Icon src="/images/boards/detail/heart.png" />
-              <Heart__Count>20</Heart__Count>
-            </Best__Right>
-          </Best__Box>
-
-          <Best__Box>
-            <Best__Img src="/images/boards/detail/keyboard.png" />
-            <Best__Left>
-              <Best__Name>ABKO HACKER K590</Best__Name>
-              <Best__Contents>단하루 139만+GIFT</Best__Contents>
-              <Best__Price>24,000원</Best__Price>
-            </Best__Left>
-
-            <Best__Right>
-              <Heart__Icon src="/images/boards/detail/heart.png" />
-              <Heart__Count>38</Heart__Count>
-            </Best__Right>
-          </Best__Box>
-        </Best__Boxs> */}
-        {/* <BannerWrapper>
-          <LayoutNavigation best={props.best} />
-        </BannerWrapper> */}
         
         <Searchbars02
           refetch={props.refetch}
