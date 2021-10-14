@@ -12,13 +12,6 @@ export const Menu = styled.div`
   padding: 18px 0;
 `;
 
-// export const Dog = styled.a`
-//   font-weight: 700;
-//   font-size: 18px;
-//   line-height: 27px;
-//   color: #000;
-// `;
-
 export const FreeBoard = styled.a`
   font-weight: 700;
   font-size: 18px;
@@ -33,12 +26,12 @@ export const Market = styled.a`
   color: #000;
 `;
 
-// export const MyPage = styled.a`
-//   font-weight: 700;
-//   font-size: 18px;
-//   line-height: 27px;
-//   color: #000;
-// `;
+export const MyPage = styled.a`
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000;
+`;
 
 export const Bar = styled.div`
   color: #fff;

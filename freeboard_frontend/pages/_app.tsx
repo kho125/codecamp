@@ -13,11 +13,14 @@ import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
 import { createUploadLink } from "apollo-upload-client";
 import { createContext, Dispatch, SetStateAction, useState } from "react";
-import "antd/dist/antd.css";
-
 import { onError } from "@apollo/client/link/error";
 import { useEffect } from "react";
-// import { getAccessToken } from "../src/commons/libraries/getAccessToken";
+import { getAccessToken } from "../src/commons/libraries/getAccessToken";
+import withApollo from "../src/components/commons/hocs/withApollo";
+import withGlobalContext from "../src/components/commons/hocs/withGlobalContext";
+import { useQuery } from "@apollo/client";
+import { FETCH_USER_LOGGED_IN } from "../src/components/commons/layout/header/LayoutHeader.queries";
+import { IQuery } from "../src/commons/types/generated/types";
 
 interface IGlobalContext {
   accessToken?: string;
@@ -26,10 +29,16 @@ interface IGlobalContext {
   setUserInfo: any;
 }
 
+// interface IUserContext {
+interface IGlobalContext {
+  userInfo: IQuery | undefined;
+}
+
 export const GlobalContext = createContext<IGlobalContext>({});
 function MyApp({ Component, pageProps }: AppProps) {
   const [accessToken, setAccessToken] = useState("");
   const [userInfo, setUserInfo] = useState({});
+  const { data } = useQuery(FETCH_USER_LOGGED_IN);
 
   const values = {
     accessToken: accessToken,
@@ -39,7 +48,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    // if (localStorage.getItem("refreshToken")) getAccessToken(setAccessToken);
+    if (localStorage.getItem("refreshToken")) getAccessToken(setAccessToken);
   }, []);
 
   const errorLink = onError(({ graphQLErrors, operation, forward }) => {
@@ -80,7 +89,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   // });
 
   const client = new ApolloClient({
-    // uri: "http://backend02.codebootcamp.co.kr/graphql",
+    uri: "http://backend02.codebootcamp.co.kr/graphql",
     link: ApolloLink.from([errorLink, uploadLink as unknown as ApolloLink]),
     cache: new InMemoryCache(),
   });
@@ -97,4 +106,5 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+// export default MyApp;
+export default withGlobalContext(withApollo(MyApp));
