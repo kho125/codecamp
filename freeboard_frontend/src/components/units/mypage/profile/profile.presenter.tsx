@@ -17,7 +17,7 @@ export default function ProfileUI(props: any) {
   const { userInfo } = useContext(UserContext);
   console.log(props.userInfo);
   return (
-    // div 처리 
+    // div 처리
     <>
       <Contianer>
         <MainTitle>프로필 관리</MainTitle>

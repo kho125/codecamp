@@ -41,7 +41,7 @@ export default function MyPageNaveUI(props: any) {
           </UserInfo>
           <NaviWrapper>
             <NaviItem01
-            // @ts-ignore
+              // @ts-ignore
               isActive01={props.isActive01}
               onClick={props.onClickMyItem}
             >
@@ -49,20 +49,20 @@ export default function MyPageNaveUI(props: any) {
             </NaviItem01>
             {/* @ts-ignore */}
             <NaviItem02
-            // @ts-ignore
+              // @ts-ignore
               isActive02={props.isActive02}
               onClick={props.onClickMyPoint}
             >
               내 포인트
             </NaviItem02>
             {/* @ts-ignore */}
-            <NaviItem03
+            {/* <NaviItem03
             // @ts-ignore
               isActive03={props.isActive03}
               onClick={props.onClickMyProfile}
             >
               프로필 관리
-            </NaviItem03>
+            </NaviItem03> */}
           </NaviWrapper>
         </Wrapper>
       </Container>

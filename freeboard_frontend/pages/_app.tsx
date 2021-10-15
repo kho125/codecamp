@@ -30,7 +30,7 @@ interface IGlobalContext {
 }
 
 // interface IUserContext {
-interface IGlobalContext {
+interface IUserContext {
   userInfo: IQuery | undefined;
 }
 
@@ -106,5 +106,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-// export default MyApp;
 export default withGlobalContext(withApollo(MyApp));
