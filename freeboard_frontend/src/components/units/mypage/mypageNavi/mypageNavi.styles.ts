@@ -48,8 +48,7 @@ export const NaviItem01 = styled.div`
   color: ${(props: any) => (props.isActive01 ? "#ffd400" : "rgba(0,0,0,0.4)")};
   padding: 20px;
   :hover {
-    /* color: #ffd400; */
-    color: #06f;
+    color: #ffd400;
     font-weight: bold;
     cursor: pointer;
   }
