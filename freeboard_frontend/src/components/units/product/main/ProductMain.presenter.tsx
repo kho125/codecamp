@@ -107,7 +107,7 @@ export default function ProductMainUI(props: IProductMainUIProps) {
     </Wrapper>
       </Main>
       <Aside>
-        <Aside__Title>오늘 본 상품s</Aside__Title>
+        <Aside__Title>오늘 본 상품</Aside__Title>
         <Aside__Box>
           {/* <Aside__Heart>
             <Aside__Heart__Icon src="/images/boards/detail/heart.png" />

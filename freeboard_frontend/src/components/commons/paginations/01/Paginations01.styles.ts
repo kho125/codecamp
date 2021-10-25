@@ -10,7 +10,7 @@ interface IPageProps {
 
 export const Page = styled.div`
   display: flex;
-  margin-left: 420px;
+  margin-left: 423px;
 `;
 
 export const Pages = styled.span`
