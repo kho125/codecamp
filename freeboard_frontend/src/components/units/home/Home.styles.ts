@@ -1,11 +1,10 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  padding: 300px;
-
   background-color: #111;
-  width: 1920px;
+  width: 1440px;
   height: 800px;
+  padding: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,11 +15,7 @@ export const Box = styled.div`
   text-decoration: none;
   width: 400px;
   height: 100px;
-  margin-top: 30px;
-
-  margin-bottom: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
