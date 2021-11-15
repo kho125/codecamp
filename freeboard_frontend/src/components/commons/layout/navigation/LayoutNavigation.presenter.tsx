@@ -1,6 +1,7 @@
 import {
   Navigation,
   Menu,
+  Main,
   FreeBoard,
   Market,
   MyPage,
@@ -12,6 +13,10 @@ export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
   return (
     <Navigation>
       <Menu>
+        <Main id="/" onClick={props.onClickMenu}>
+          메인페이지
+        </Main>
+        <Bar>ㅣ</Bar>
         <FreeBoard id="/boards" onClick={props.onClickMenu}>
           자유게시판
         </FreeBoard>

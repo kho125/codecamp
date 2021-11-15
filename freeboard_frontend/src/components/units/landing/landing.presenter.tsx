@@ -66,11 +66,11 @@ export default function LandingUI() {
   };
 
   const onClickBoard = () => {
-    router.push("/board/list");
+    router.push("/boards");
   };
 
   const onClickMarket = () => {
-    router.push("/market/list");
+    router.push("/product/main");
   };
 
   const onClickNative = () => {
@@ -204,7 +204,7 @@ export default function LandingUI() {
               <ProjectContentsWrapper>
                 <MyProjectStackTitle> 자유게시판 </MyProjectStackTitle>
                 <ProjectBoardWrapper onClick={onClickBoard}>
-                  <ProjectsImg src="myprofile/test01.jpg" />
+                  <ProjectsImg src="myprofile/test02.jpg" />
                   <MyProjectStackWrapper>
                     <MyProjectStackTextWrapper>
                       <Fade bottom>
@@ -228,7 +228,7 @@ export default function LandingUI() {
               <ProjectContentsWrapper>
                 <MyProjectStackTitle> 중고마켓 </MyProjectStackTitle>
                 <ProjectMarketWrapper onClick={onClickMarket}>
-                  <ProjectsImg src="myprofile/test02.jpg" />
+                  <ProjectsImg src="myprofile/test01.jpg" />
                   <MyProjectStackWrapper>
                     <MyProjectStackTextWrapper>
                       <Fade bottom>
