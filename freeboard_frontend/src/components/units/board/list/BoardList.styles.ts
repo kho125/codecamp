@@ -50,8 +50,7 @@ export const User__Img = styled.img`
   width: 20px;
   height: 20px;
   display: flex;
-  /* margin: 22px 6px 10px 22px; */
-  margin: 22px 7px 10px 22px;
+  margin: 22px 6px 10px 22px;
 `;
 
 export const User__Name = styled.div`

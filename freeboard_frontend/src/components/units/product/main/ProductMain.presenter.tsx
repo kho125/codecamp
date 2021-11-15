@@ -106,9 +106,9 @@ export default function ProductMainUI(props: IProductMainUIProps) {
         
     </Wrapper>
       </Main>
-      <Aside>
-        <Aside__Title>오늘 본 상품</Aside__Title>
-        <Aside__Box>
+      {/* <Aside> */}
+        {/* <Aside__Title>오늘 본 상품</Aside__Title> */}
+        {/* <Aside__Box> */}
           {/* <Aside__Heart>
             <Aside__Heart__Icon src="/images/boards/detail/heart.png" />
             <Aside__Heart__Count>{data.pickedCount}</Aside__Heart__Count>
@@ -118,19 +118,19 @@ export default function ProductMainUI(props: IProductMainUIProps) {
           <Aside__Contents>{data.contents}</Aside__Contents>
           <Aside__Price>{data.price}</Aside__Price>
           <Aside__Tag>{data.tags}</Aside__Tag> */}
-        </Aside__Box>
+        {/* </Aside__Box> */}
 
 
-        <Aside__Box>
+        {/* <Aside__Box> */}
         {/* {props.baskets.map((data) => (
         <div key={data._id}>
           <span>{data.name}</span>
           <span>{data.remarks}</span>
         </div>
       ))} */}
-        </Aside__Box>
+        {/* </Aside__Box> */}
         
-      </Aside>
+      {/* </Aside> */}
       
     </Full>
   );
