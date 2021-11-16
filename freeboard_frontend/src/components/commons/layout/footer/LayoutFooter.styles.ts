@@ -15,7 +15,7 @@ export const SubWrapper = styled.div`
 export const Title = styled.div`
   padding-top: 30px;
   padding-bottom: 10px;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   color: #fff;
   text-align: center;

@@ -5,7 +5,7 @@ export default function LayoutHeader() {
   const router = useRouter();
 
   function onClickLogo() {
-    router.push("/boards");
+    router.push("/");
   }
 
   function onClickMoveToLogin() {

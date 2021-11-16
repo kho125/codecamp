@@ -18,10 +18,10 @@ export const AAA = styled.div`
     color: #fff;
   }
   p {
-    padding-bottom: 138px;
+    padding-bottom: 127px;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 24px;
+    line-height: 26px;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
@@ -40,10 +40,10 @@ export const BBB = styled.div`
     color: #fff;
   }
   p {
-    padding-bottom: 138px;
+    padding-bottom: 127px;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 24px;
+    line-height: 26px;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
@@ -62,10 +62,10 @@ export const CCC = styled.div`
     color: #fff;
   }
   p {
-    padding-bottom: 138px;
+    padding-bottom: 127px;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 24px;
+    line-height: 26px;
     text-align: center;
     text-transform: uppercase;
     color: #fff;

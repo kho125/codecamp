@@ -17,10 +17,11 @@ export const InnerWrapper = styled.div`
 `;
 
 export const InnerLogo = styled.div`
-  font-size: 80px;
+  font-size: 60px;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
+  margin-top: 8px;
 `;
 
 export const InnerButton = styled.span`

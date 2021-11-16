@@ -15,7 +15,7 @@ export default function LayoutFooterUI() {
   return (
     <Wrapper>
       <SubWrapper>
-        <Title>Oh~ Market</Title>
+        <Title>이웃마켓</Title>
         <ContentsWrapper>
           <Contents> 제작자 : 김경호</Contents>
           <Contents> 연락처 : 010-6413-6116</Contents>
