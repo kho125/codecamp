@@ -36,7 +36,7 @@ export const Row = styled.div`
   border-bottom: 1px solid gray;
 
   :hover {
-    color: #06f;
+    color: blue;
   }
 `;
 
